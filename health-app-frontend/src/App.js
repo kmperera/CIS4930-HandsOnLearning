@@ -21,5 +21,5 @@ function App() {
     </div>
   );
 }
-
+// memo :)
 export default App;
