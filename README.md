@@ -1,8 +1,8 @@
 # CIS4930-HandsOnLearningh
 Github Commands-
 
-fetch changes from master (MUST DO BEFORE PULL)- git fetch
+fetch changes from master (same as pull but without merging changegs to our branch) - git fetch
 
-Pull all changes - git pull
+Pull all changes - git pull <remote>
 
-pull changes from specific branch - git pull origin _branch_
+pull changes from specific branch - git pull <remote> _branch_
