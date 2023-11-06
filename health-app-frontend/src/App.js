@@ -1,51 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import * as React from 'react';
+import {Routes, Route} from 'react-router-dom';
+import Homepage from './Homepage/Homepage';
 
+//I'm moving all of the 'homepage' JSX to the /Homepage folder.
+//sorry for any confusion, but it lets us render entire pages easier and should help with organization later down the line.
+
+//don't touch the app function again, it's going to be used to route all pages.
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to APP TITLE, click a category to get started!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          // button link need to be edited
-        >
-          Rehabilitation Exercises
-        </a>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          // button link need to be edited
-        >
-          Evaluate
-        </a>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          // button link need to be edited
-        >
-          Stay Connected
-        </a>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          // button link need to be edited
-        >
-          Useful Equiment & Applications
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route exact path = "/" element = {<Homepage/>}></Route>
+        <Route exact path = "/home" element = {<Homepage/>}></Route>
+      </Routes>
     </div>
   );
 }
