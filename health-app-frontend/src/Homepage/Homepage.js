@@ -18,28 +18,27 @@ export default function Homepage() {
  return (
     <header className='App-header'>
     <p>
-      Welcome to APP TITLE, click a category to get started!
+      Welcome to NeuroNurture, click a category to get started!
     </p>
     <Link
       onClick={handleClick('Excercises')}
-      // button link need to be edited
     >
       Rehabilitation Exercises
     </Link>
     <Link
-      onClick={handleClick('Excercises')}
+      onClick={handleClick('Evaluations')}
       // button link need to be edited
     >
       Evaluate
     </Link>
     <Link
-      onClick={handleClick('Excercises')}
+      onClick={handleClick('StayConnected')}
       // button link need to be edited
     >
       Stay Connected
     </Link>
     <Link
-      onClick={handleClick('Excercises')}
+      onClick={handleClick('Useful')}
       // button link need to be edited
     >
       Useful Equiment & Applications
