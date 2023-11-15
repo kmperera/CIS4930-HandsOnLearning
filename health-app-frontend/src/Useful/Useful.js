@@ -15,7 +15,7 @@ const item2 = {
     imageSize: 90,
     type: 'application',
     description: 'useful for ...',
-    price: 15.25,
+    price: 4.25,
     link: 'get the produce here',
 };
 
