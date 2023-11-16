@@ -4,14 +4,49 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
+import Homepage from './Homepage/Homepage';
+import Excercises from './Exercises/Excercises'
+import Evaluations from './Evaluations/Evaluations'
+import StayConnected from './StayConnected/StayConnected'
+import Useful from './Useful/Useful' 
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App></App>,
+  },
+  {
+    path: "home",
+    element: <Homepage/>,
+  },
+  {
+    path: "exercises",
+    element: <Excercises/>,
+  },
+  {
+    path: "evaluations",
+    element: <Evaluations/>,
+  },
+  {
+    path: "StayConnected",
+    element: <StayConnected/>,
+  },
+  {
+    path: "useful",
+    element: <Useful/>,
+  },
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode >
-    <Router>
-      <App />
-    </Router>
+    <RouterProvider router = {router} />
   </React.StrictMode >
 );
 

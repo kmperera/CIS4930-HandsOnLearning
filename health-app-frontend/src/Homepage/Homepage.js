@@ -21,24 +21,25 @@ export default function Homepage() {
       Welcome to NeuroNurture, click a category to get started!
     </p>
     <Link
-      onClick={handleClick('Excercises')}
+      to = "/exercises"
     >
       Rehabilitation Exercises
     </Link>
     <Link
-      onClick={handleClick('Evaluations')}
+      to = "/evaluations"
       // button link need to be edited
     >
       Evaluate
     </Link>
     <Link
-      onClick={handleClick('StayConnected')}
+      to = "/StayConneccted"
       // button link need to be edited
     >
       Stay Connected
     </Link>
     <Link
-      onClick={handleClick('Useful')}
+      to = "/useful"
+
       // button link need to be edited
     >
       Useful Equiment & Applications
