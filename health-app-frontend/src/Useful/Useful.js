@@ -1,4 +1,8 @@
 import React from "react"
+import Button from '@mui/joy/Button';
+import Select from '@mui/joy/Select';
+import FormLabel from '@mui/joy/FormLabel';
+import Option from '@mui/joy/Option';
 
 // when creating new items put them in alphabetically
 const a1 = {
@@ -65,31 +69,31 @@ export default function Useful() {
     return (
         <div>
             <h1>Useful Equipment & Applications (Under Construction)</h1>
-            <label>Filter
-                <label>Type:
-                    <select name="type">
-                        <option value="empty">-</option>
-                        <option value="equipment">Equipment</option>
-                        <option value="applications">Applications</option>
-                    </select>
-                </label>
-                <label>Sort:
-                    <select name="sort">
-                        <option value="empty">-</option>
-                        <option value="p_low">Price: low-to-high</option>
-                        <option value="p_high">Price: high-to-low</option>
-                    </select>
-                </label>
-                <label>Need help with:
-                    <select name="help">
-                        <option value="empty">-</option>
-                        <option value="cognitive">Cognitive</option>
-                        <option value="muscleA">Muscle Group A</option>
-                        <option value="muscleB">Muscle Group B</option>
-                    </select>
-                </label>
-                <button onClick={() => search()}>Search</button>
-            </label>
+            <FormLabel>
+                <FormLabel>Type:
+                    <Select name="type">
+                        <Option value="empty">-</Option>
+                        <Option value="equipment">Equipment</Option>
+                        <Option value="applications">Applications</Option>
+                    </Select>
+                </FormLabel>
+                <FormLabel>Sort:
+                    <Select name="sort">
+                        <Option value="empty">-</Option>
+                        <Option value="p_low">Price: low-to-high</Option>
+                        <Option value="p_high">Price: high-to-low</Option>
+                    </Select>
+                </FormLabel>
+                <FormLabel>Need help with:
+                    <Select name="help">
+                        <Option value="empty">-</Option>
+                        <Option value="cognitive">Cognitive</Option>
+                        <Option value="muscleA">Muscle Group A</Option>
+                        <Option value="muscleB">Muscle Group B</Option>
+                    </Select>
+                </FormLabel>
+                <Button onClick={() => search()}>Search</Button>
+            </FormLabel>
             {listItems}
         </div>
     );
