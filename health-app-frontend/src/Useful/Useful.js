@@ -1,25 +1,27 @@
 import React from "react"
 
-const item1 = {
-    name: 'Equipment A',
-    imageUrl: 'http://i.imgur.com/yX0vd0Ss.jpg',
-    imageSize: 90,
-    type: 'equipment',
-    description: 'useful for ...',
-    price: 15.25,
-    link: 'get the produce here',
-};
-const item2 = {
+// when creating new items put them in alphabetically
+const a1 = {
     name: 'Application A',
     imageUrl: 'http://i.imgur.com/yX0vd0Ss.jpg',
     imageSize: 90,
     type: 'application',
     description: 'useful for ...',
     price: 4.25,
-    link: 'get the produce here',
+    link: 'get the product here',
 };
 
-const items = [item1, item2];
+const e1 = {
+    name: 'Equipment A',
+    imageUrl: 'http://i.imgur.com/yX0vd0Ss.jpg',
+    imageSize: 90,
+    type: 'equipment',
+    description: 'useful for ...',
+    price: 15.25,
+    link: 'get the product here',
+};
+
+const items = [a1, e1];
 const listItems = items.map((d) => <li key={d.name}>
         <h2>{d.name}</h2>
         <img
@@ -39,12 +41,11 @@ const listItems = items.map((d) => <li key={d.name}>
 function alterList(t, s, h) {
     if(t !== "-") {
         // loop through all items
-        if(t !== item1.type) {
-            items.pop(item1);
-        }
-        if(t !== item2.type) {
-            items.pop(item2);
-        }
+        items.forEach((item) => {
+            if(t !== item.type) {
+                items.pop(items);
+            }
+        })
     }
     if(s !== "-") {
         // sort elements of items
@@ -52,6 +53,7 @@ function alterList(t, s, h) {
     if(h !== "-") {
         // loop thorugh all itmes and see if h apears in description
     }
+    // listItems;
 };
 
 export default function Useful() {
@@ -74,7 +76,6 @@ export default function Useful() {
                 <label>Sort:
                     <select name="sort">
                         <option value="empty">-</option>
-                        <option value="p_low">Rating (maybe take this one out)</option>
                         <option value="p_low">Price: low-to-high</option>
                         <option value="p_high">Price: high-to-low</option>
                     </select>

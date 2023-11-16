@@ -73,7 +73,7 @@ export default function Homepage() {
 
       <div className='App-header'>
         <div className='Link'>
-          <Link to='/Excercises' className='category-link'>
+          <Link to='/Exercises' className='category-link'>
             <h3>Rehabilitation Exercises</h3>
           </Link>
           <Link to='/Evaluations' className='category-link'>
