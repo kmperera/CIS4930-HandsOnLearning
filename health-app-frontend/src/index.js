@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     element: <Evaluations/>,
   },
   {
-    path: "StayConnected",
+    path: "stayconnected",
     element: <StayConnected/>,
   },
   {

@@ -32,7 +32,7 @@ export default function Homepage() {
       Evaluate
     </Link>
     <Link
-      to = "/StayConneccted"
+      to = "/stayconnected"
       // button link need to be edited
     >
       Stay Connected
