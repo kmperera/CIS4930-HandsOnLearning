@@ -25,8 +25,8 @@ const e1 = {
     link: 'get the product here',
 };
 
-const items = [a1, e1];
-const listItems = items.map((d) => <li key={d.name}>
+const AllItems = [a1, e1];
+let listItems = AllItems.map((d) => <li key={d.name}>
         <h2>{d.name}</h2>
         <img
             className="avatar"
@@ -43,6 +43,23 @@ const listItems = items.map((d) => <li key={d.name}>
 
 // this isn't working properly
 function alterList(t, s, h) {
+    if(t == "-" && s == "-" && h == "-") {
+        listItems = AllItems.map((d) => <li key={d.name}>
+        <h2>{d.name}</h2>
+        <img
+            className="avatar"
+            src={d.imageUrl}
+            alt={'Photo of ' + d.name}
+            style={{
+                width: d.imageSize,
+                height: d.imageSize
+             }}
+        />
+        <p>{d.description}</p>
+        <p>${d.price} at {d.link}</p>
+    </li>);
+    }
+    let items = AllItems;
     if(t !== "-") {
         // loop through all items
         items.forEach((item) => {
@@ -57,7 +74,20 @@ function alterList(t, s, h) {
     if(h !== "-") {
         // loop thorugh all itmes and see if h apears in description
     }
-    // listItems;
+    listItems = items.map((d) => <li key={d.name}>
+        <h2>{d.name}</h2>
+        <img
+            className="avatar"
+            src={d.imageUrl}
+            alt={'Photo of ' + d.name}
+            style={{
+                width: d.imageSize,
+                height: d.imageSize
+             }}
+        />
+        <p>{d.description}</p>
+        <p>${d.price} at {d.link}</p>
+    </li>);
 };
 
 export default function Useful() {
@@ -94,7 +124,6 @@ export default function Useful() {
                 </FormLabel>
                 <Button onClick={() => search()}>Search</Button>
             </FormLabel>
-            {listItems}
         </div>
     );
 }
