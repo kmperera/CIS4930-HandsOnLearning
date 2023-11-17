@@ -27,21 +27,6 @@ const e1 = {
 };
 
 const AllItems = [a1, e1];
-let listItems = AllItems.map((d) => <li key={d.name}>
-
-    <h2>{d.name}</h2>
-    <img
-        className="avatar"
-        src={d.imageUrl}
-        alt={'Photo of ' + d.name}
-        style={{
-            width: d.imageSize,
-            height: d.imageSize
-        }}
-    />
-    <p>{d.description}</p>
-    <p>${d.price} at {d.link}</p>
-</li>);
 
 
 export default function Useful() {
@@ -59,8 +44,8 @@ export default function Useful() {
 
     // this isn't working properly
     function alterList(t, s, h) {
-        if (t == "-" && s == "-" && h == "-") {
-            listItems = AllItems.map((d) => <li key={d.name}>
+        if ((t == "-" || t == "") && (s == "-" || s == "") && (h == "-" || h == "")) {
+            let listItems = AllItems.map((d) => <li key={d.name}>
                 <h2>{d.name}</h2>
                 <img
                     className="avatar"
@@ -91,7 +76,7 @@ export default function Useful() {
         if (h !== "-") {
             // loop thorugh all itmes and see if h apears in description
         }
-        listItems = items.map((d) => <li key={d.name}>
+        let listItems = items.map((d) => <li key={d.name}>
             <h2>{d.name}</h2>
             <img
                 className="avatar"
