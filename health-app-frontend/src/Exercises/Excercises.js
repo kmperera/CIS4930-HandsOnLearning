@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export default function Exercises() {
     const [filterCategory, setFilterCategory] = useState("all");
+    const [filterID, setFilterID] = useState("all");
 
     const data = [
         { id: 1, name: "Exercise 1", category: "Category A" },
@@ -12,16 +13,17 @@ export default function Exercises() {
     const filteredData = filterCategory === "all"
         ? data
         : data.filter(item => item.category === filterCategory);
+        : data.filter(item => item.id === filterID);
 
     const categories = Array.from(new Set(data.map(item => item.category)));
+    const ids = Array.from(new Set(data.map(item => item.id)));
 
     return (
         <div>
-            <h1>This is the exercises page (Under Construction)</h1>
 
             {/* Filter dropdown */}
             <label>
-                Filter by Category:
+                Filters: 
                 <select
                     value={filterCategory}
                     onChange={(e) => setFilterCategory(e.target.value)}
@@ -29,6 +31,16 @@ export default function Exercises() {
                     <option value="all">All Categories</option>
                     {categories.map(category => (
                         <option key={category} value={category}>{category}</option>
+                    ))}
+                </select>
+
+                <select
+                    value={filterID}
+                    onChange={(e) => setFilterID(e.target.value)}
+                >
+                    <option value="all">All IDs</option>
+                    {ids.map(id => (
+                        <option key={id} value={id}>{id}</option>
                     ))}
                 </select>
             </label>
