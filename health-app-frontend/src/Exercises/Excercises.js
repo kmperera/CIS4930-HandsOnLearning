@@ -10,17 +10,16 @@ export default function Exercises() {
         // Add more data as needed
     ];
 
-    const filteredData = filterCategory === "all"
-        ? data
-        : data.filter(item => item.category === filterCategory);
-        : data.filter(item => item.id === filterID);
+    const filteredData = data.filter(item => (
+        (filterCategory === "all" || item.category === filterCategory) &&
+        (filterID === "all" || item.id === parseInt(filterID))
+    ));
 
     const categories = Array.from(new Set(data.map(item => item.category)));
     const ids = Array.from(new Set(data.map(item => item.id)));
 
     return (
         <div>
-
             {/* Filter dropdown */}
             <label>
                 Filters: 
