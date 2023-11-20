@@ -51,12 +51,44 @@
 
 // Homepage.js
 
-import React from 'react';
+import React, { useState, useEffect, useMemo }  from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Homepage.css';
+import Motivation from './Motivation';
 
 export default function Homepage() {
+  //popup motivation functionality
+  const messages = useMemo(() => [
+    "Progress, not perfection.", 
+    "Healing begins with self love.", 
+    "One step at a time.", 
+    "Your strength is beyond inspiring.",
+    "Hope is stronger than fear.",
+    "Discover your true resilience.",
+    "Positivity is the greatest super power.",
+    "Embrace your inner strength.",
+    "Courage and perserverance daily.",
+    "You are so loved."
+  ], []); 
+
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+
+  useEffect(() => {
+    const showToast = () => {
+      setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+      setTimeout(showToast, 10000); 
+    };
+
+    setTimeout(showToast, 10000); 
+
+    return () => {
+      clearTimeout(); 
+    };
+  }, [currentMessageIndex, messages]);
+
+  const currentMessage = messages[currentMessageIndex];
+
   // Use this for routing using the buttons
   const navigate = useNavigate();
 
@@ -67,6 +99,10 @@ export default function Homepage() {
 
   return (
     <div>
+      <div>
+        <Motivation message={currentMessage} />
+      </div>
+
       <div className='Header-container'>
         <h1>Welcome to NeuroNurture, click a category to get started!</h1>
       </div>
