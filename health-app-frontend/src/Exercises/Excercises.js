@@ -9,7 +9,7 @@ export default function Exercises() {
     const [getUp, setGetUp] = useState({
         name: "Getting up from a fall",
         link: "https://youtu.be/2Z46M1WvmvQ",
-        thumbnail: "https://example.com/getUpThumbnail.jpg"
+        //thumbnail: "https://example.com/getUpThumbnail.jpg"
     });
 
     const data = [
@@ -29,7 +29,7 @@ export default function Exercises() {
             <div>
                 <h2>{getUp.name}</h2>
                 <a href={getUp.link} target="_blank" rel="noopener noreferrer">
-                    <img src={getUp.thumbnail} alt={`${getUp.name} Thumbnail`} />
+                    {/*<img src={getUp.thumbnail} alt={`${getUp.name} Thumbnail`} />*/}
                 </a>
             </div>
 
