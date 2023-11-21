@@ -9,6 +9,7 @@ import Excercises from './Exercises/Excercises'
 import Evaluations from './Evaluations/Evaluations'
 import StayConnected from './StayConnected/StayConnected'
 import Useful from './Useful/Useful' 
+import '@fontsource/inter';
 
 import {
   createBrowserRouter,
