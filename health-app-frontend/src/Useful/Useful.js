@@ -22,6 +22,11 @@ const AllItems = [
         price: 15.99, 
         link: 'https://www.amazon.com/Yes4All-Wooden-Wobble-Balance-Board/dp/B00WJJJX2Q/?th=1'
     }, {
+        name: 'Brain Out',
+        description: 'Brain Out is an application that improves cognitive ability. Stimulates the brain. Cognitive Training app.',
+        price: 0 + " FREE",
+        link: 'https://apps.apple.com/us/app/brain-out-tricky-riddle-games/id1477841973'
+    }, {
         name: 'Calm',
         description: 'Calm is an application that improves sleep and reduces depression and anxiety. Uses meditation to help those struggling with post-stroke depression, anxiety, and insomnia. Meditation app.',
         price: 0 + ' FREE',
@@ -107,6 +112,11 @@ const AllItems = [
         price: 9.29,
         link: 'https://www.amazon.com/s?k=therapy+putty&ref=nb_sb_noss_2'
     }, {
+        name: 'Trivia Crack',
+        description: 'Trivia Crack is an application that improves cognitive ability. Comes in over 20 languages and stimulates the brain. Cognitive Training app.',
+        price: 0 + " FREE",
+        link: 'https://apps.apple.com/us/app/trivia-crack/id651510680'
+    }, {
         name: 'What\'s the Difference?',
         description: 'What\'s the Difference is an application that improves cognitive function and visual skills. Helps with attention and visual scanning.',
         price: 0 + ' FREE',
@@ -116,6 +126,11 @@ const AllItems = [
         description: 'Whats\’s the Saying is an application that improves cognitive function, memory, and recall. Brain-stimulating word game that helps critical thinking skills.',
         price: 0 + ' FREE',
         link: 'https://apps.apple.com/us/app/whats-the-saying-logic-riddles-brain-teasers/id633197707'
+    }, {
+        name: 'Wordscapes',
+        description: 'Wordscapes is an application that improves cognitive ability. Offers a variety of word games and stimulates the brain. Cognitive Training app.',
+        price: 0 + ' FREE',
+        link: 'https://apps.apple.com/us/app/wordscapes/id1207472156'
     }/*, {
         name: '',
         description: '',
