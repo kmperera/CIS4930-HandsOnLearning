@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Button from '@mui/joy/Button';
 import Select from '@mui/joy/Select';
 import FormLabel from '@mui/joy/FormLabel';
 import Option from '@mui/joy/Option';
 
-const API_KEY = "YOUR_YOUTUBE_API_KEY"; // Replace with your YouTube API key
-
 export default function Exercises() {
-    const [filterCategory, setFilterCategory] = useState("all");
+    const [filterCategory, setFilterCategory] = React.useState("all");
     const [getUp, setGetUp] = useState({
         name: "Getting up from a fall",
         link: "https://youtu.be/2Z46M1WvmvQ",
-        thumbnail: "" // Will be fetched dynamically
+        thumbnail: "https://example.com/getUpThumbnail.jpg"
     });
 
     const data = [
@@ -26,34 +24,8 @@ export default function Exercises() {
 
     const categories = Array.from(new Set(data.map(item => item.category)));
 
-    useEffect(() => {
-        // Fetch the thumbnail for the getUp video
-        const fetchThumbnail = async () => {
-            try {
-                const response = await fetch(
-                    `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${getVideoId(getUp.link)}&key=${API_KEY}`
-                );
-
-                const data = await response.json();
-                const thumbnailUrl = data.items[0]?.snippet.thumbnails.medium.url;
-
-                setGetUp(prevState => ({ ...prevState, thumbnail: thumbnailUrl }));
-            } catch (error) {
-                console.error("Error fetching YouTube video thumbnail:", error);
-            }
-        };
-
-        fetchThumbnail();
-    }, [getUp.link]);
-
-    const getVideoId = (url) => {
-        const videoIdMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
-        return videoIdMatch ? videoIdMatch[1] : null;
-    };
-
     return (
         <div>
-            {/* "getUp" section */}
             <div>
                 <h2>{getUp.name}</h2>
                 <a href={getUp.link} target="_blank" rel="noopener noreferrer">
@@ -83,7 +55,6 @@ export default function Exercises() {
                     <tr>
                         <th>Exercise</th>
                         <th>Category</th>
-                        <th>Thumbnail</th>
                         <th>Link</th>
                     </tr>
                 </thead>
@@ -92,14 +63,7 @@ export default function Exercises() {
                         <tr key={item.name}>
                             <td>{item.name}</td>
                             <td>{item.category}</td>
-                            <td>
-                                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                                    <img src={getVideoId(item.link) ? `https://img.youtube.com/vi/${getVideoId(item.link)}/mqdefault.jpg` : ''} alt={`${item.name} Thumbnail`} />
-                                </a>
-                            </td>
-                            <td>
-                                <a href={item.link} target="_blank" rel="noopener noreferrer">Watch Video</a>
-                            </td>
+                            <td>{item.link}</td>
                         </tr>
                     ))}
                 </tbody>
