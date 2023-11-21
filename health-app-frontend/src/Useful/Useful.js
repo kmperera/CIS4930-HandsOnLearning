@@ -4,7 +4,7 @@ import FormLabel from '@mui/joy/FormLabel';
 import { useState } from "react";
 import Input from '@mui/joy/Input';
 
-// listed in alphabeticacl order
+// listed in alphabetical order
 const AllItems = [
     {
         name: 'Arm Peddlers',
@@ -23,12 +23,12 @@ const AllItems = [
         link: 'https://www.amazon.com/Yes4All-Wooden-Wobble-Balance-Board/dp/B00WJJJX2Q/?th=1'
     }, {
         name: 'Calm',
-        description: 'Calm is an application that improves sleep and reduces depression and anxiety. Uses meditation to help those struggling with post-stroke depression, anxiety, and insomnia.',
+        description: 'Calm is an application that improves sleep and reduces depression and anxiety. Uses meditation to help those struggling with post-stroke depression, anxiety, and insomnia. Meditation app.',
         price: 0 + ' FREE',
         link: 'https://www.calm.com/'
     }, {
         name: 'Clock Yourself',
-        description: 'Clock Yourself is an application that improves coordination and balance. Activities progressively increase in complexity. Helps with quicker reaction times.',
+        description: 'Clock Yourself is an application that improves coordination and balance. Activities progressively increase in complexity. Helps with quicker reaction times. Physiotherapy.',
         price: 1.99,
         link: 'https://www.clockyourself.com.au/'
     }, {
@@ -62,6 +62,16 @@ const AllItems = [
         price: 24.95, 
         link: 'https://www.amazon.com/Handmaster-Plus-Physical-Therapy-Exerciser/dp/B00CTG3TQU/'
     }, {
+        name: 'Language Therapy 4-in-1',
+        description: 'Language Therapy 4-in-1 is an application that improves cognitive ability. Helps with reading, writing, speaking, and listening through comprehension, naming, reading, and writing, therapies.',
+        price: 64.99,
+        link: 'https://apps.apple.com/us/app/language-therapy-4-in-1/id525278822?mt=8&ct=1link&pt=565195'
+    }, {
+        name: 'Lumosity',
+        description: 'Lumosity is an application that improves cognitive function. Designed for adults of all ages. Cognitive Training App.',
+        price: 11.99 + " a month",
+        link: 'https://www.lumosity.com/en/'
+    }, {
         name: 'Mirror Box',
         description: 'Mirror Box is equipment that helps with hand rehabilitation. “Tricks” that brain into thinking both hands are moving, which helps neuroplasticity and encourages movement. Helps with hand paralysis and severe spasticity.',
         price: 59.99, 
@@ -71,6 +81,16 @@ const AllItems = [
         description: 'MusicGlove Hand Therapy is equipment that improves hand function. Music-based therapy device that motivates you to exercise using a musical game. Stimulate the brain and promotes neuroplasticity.',
         price: 369.00, 
         link: 'https://www.flintrehab.com/product/musicglove-hand-therapy/?utm_source=Blog&utm_medium=MusicGlove%20Inside%20Article'
+    }, {
+        name: 'Proloquo2Go',
+        description: 'Proloquo2Go is an application that helps patients who can’t talk. Provides needed communication with quick access to symbols of “core words”.',
+        price: 249,
+        link: 'https://www.assistiveware.com/products/proloquo2go'
+    }, {
+        name: 'Recognize',
+        description: 'Recognize is an application that helps with differentiation between left and right. Also improves motor imagery with mirror therapy. Tests you on left/right discrimination. Rehabilitation app.',
+        price: 9.99 + " per application",
+        link: 'https://www.noigroup.com/product/recogniseapp/'
     }, {
         name: 'Stability Balls',
         description: 'Stability Balls are equipment that work on balance. Safer than balance boards. Commonly used for core rehab exercises. Used to improve balance and ability to walk.',
@@ -86,6 +106,16 @@ const AllItems = [
         description: 'Therapy Putty is equipment that improves fine motor coordination, strength, and range-of-motion. Many available exercises for various improvements.',
         price: 9.29,
         link: 'https://www.amazon.com/s?k=therapy+putty&ref=nb_sb_noss_2'
+    }, {
+        name: 'What\'s the Difference?',
+        description: 'What\'s the Difference is an application that improves cognitive function and visual skills. Helps with attention and visual scanning.',
+        price: 0 + ' FREE',
+        link: 'https://apps.apple.com/us/app/whats-the-difference-spot-it/id820452091'
+    }, {
+        name: 'What\'s the Saying?',
+        description: 'Whats\’s the Saying is an application that improves cognitive function, memory, and recall. Brain-stimulating word game that helps critical thinking skills.',
+        price: 0 + ' FREE',
+        link: 'https://apps.apple.com/us/app/whats-the-saying-logic-riddles-brain-teasers/id633197707'
     }/*, {
         name: '',
         description: '',
@@ -126,8 +156,8 @@ export default function Useful() {
                 {list.map((item) => (
                     <li key={item.name}>
                         <h2>{item.name}</h2>
-                        <h2>{item.description}</h2>
-                        <h2>${item.price} at {item.link}</h2>
+                        <p>{item.description}</p>
+                        <p>${item.price} at {item.link}</p>
                     </li>
                 ))}
             </ul>
