@@ -29,8 +29,8 @@ const LocationComponent = () => {
 
 //   useEffect(() => {
 //     if (latitude !== null && longitude !== null) {
-//     const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY'; // Replace with your Google Maps API key
-//     const radius = 5000; // Search within 5km radius (can be adjusted)
+//     const apiKey = 'AIzaSyD_3KimLOdITcR0Ppn8Eah0M0LZ4xuwr9I'; // Replace with your Google Maps API key
+//     const radius = 10000; // Search within 10km radius (can be adjusted)
 
 //     axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=${radius}&type=hospital&key=${apiKey}`)
 //       .then((response) => {
