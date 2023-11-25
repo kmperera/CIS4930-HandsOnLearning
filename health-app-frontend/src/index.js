@@ -10,12 +10,35 @@ import Evaluations from './Evaluations/Evaluations'
 import StayConnected from './StayConnected/StayConnected'
 import Useful from './Useful/Useful' 
 import '@fontsource/inter';
+import { createTheme } from '@mui/material';
+import { ThemeProvider } from '@mui/joy/styles';
+
 
 import {
   createBrowserRouter,
   RouterProvider,
   Route,
 } from "react-router-dom"
+
+
+
+//this is the theme that we'll use for the rest of the app.
+//it's going to be overlaid on the entire application so you can use any of these values anywhere, just access them like you would values for a regular JSON object.S
+const theme = createTheme({
+  colorSchemes: {
+    light: {
+      palette: {
+        background: {
+          default: '#FFFFF', // white background
+          footer: '#262626'
+        },
+        text: {
+          primary: '#00000', // BLACK text
+        },
+      },
+    },
+  },
+});
 
 const router = createBrowserRouter([
   {
@@ -47,7 +70,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode >
+    <ThemeProvider theme={theme}>
     <RouterProvider router = {router} />
+    </ThemeProvider>
   </React.StrictMode >
 );
 
