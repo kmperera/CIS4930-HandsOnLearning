@@ -191,6 +191,7 @@ export default function Useful() {
 
     return (
         <div>
+            <Motivation message={currentMessage} />
             <h1>Useful Rehabilitation Tools</h1>
             <Input
                 label="search"
