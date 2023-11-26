@@ -1,8 +1,9 @@
 import React from "react"
 import Button from '@mui/joy/Button';
 import FormLabel from '@mui/joy/FormLabel';
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Input from '@mui/joy/Input';
+import Motivation from "./Motivation";
 
 // listed in alphabetical order
 const AllItems = [
@@ -140,6 +141,36 @@ const AllItems = [
 ];
 
 export default function Useful() {
+    const messages = useMemo(() => [
+        "Progress, not perfection.", 
+        "Healing begins with self love.", 
+        "One step at a time.", 
+        "Your strength is beyond inspiring.",
+        "Hope is stronger than fear.",
+        "Discover your true resilience.",
+        "Positivity is the greatest super power.",
+        "Embrace your inner strength.",
+        "Courage and perserverance daily.",
+        "You are so loved."
+      ], []); 
+    
+    const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+    
+    useEffect(() => {
+        const showToast = () => {
+            setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+            setTimeout(showToast, 10000); 
+        };
+    
+        setTimeout(showToast, 10000); 
+    
+        return () => {
+            clearTimeout(); 
+        };
+      }, [currentMessageIndex, messages]);
+    
+    const currentMessage = messages[currentMessageIndex];
+
     const [list, setList] = useState(AllItems);
     const [SearchTerm, setSearch] = useState("");
 
