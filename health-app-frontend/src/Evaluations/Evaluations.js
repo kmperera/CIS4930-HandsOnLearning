@@ -6,9 +6,9 @@ import { useState, useEffect, useMemo } from "react";
 
 export default function Evaluations() {
     const messages = useMemo(() => [
-        "Progress, not perfection.", 
         "Healing begins with self love.", 
         "One step at a time.", 
+        "Progress, not perfection.",
         "Your strength is beyond inspiring.",
         "Hope is stronger than fear.",
         "Discover your true resilience.",

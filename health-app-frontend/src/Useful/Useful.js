@@ -142,6 +142,7 @@ const AllItems = [
 
 export default function Useful() {
     const messages = useMemo(() => [
+        "Embrace your inner strength.",
         "Progress, not perfection.", 
         "Healing begins with self love.", 
         "One step at a time.", 
@@ -149,7 +150,6 @@ export default function Useful() {
         "Hope is stronger than fear.",
         "Discover your true resilience.",
         "Positivity is the greatest super power.",
-        "Embrace your inner strength.",
         "Courage and perserverance daily.",
         "You are so loved."
       ], []); 

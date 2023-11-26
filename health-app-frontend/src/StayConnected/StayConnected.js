@@ -5,11 +5,11 @@ import Motivation from "./Motivation";
 
 export default function StayConnected() {
     const messages = useMemo(() => [
+        "Hope is stronger than fear.",
         "Progress, not perfection.", 
         "Healing begins with self love.", 
         "One step at a time.", 
         "Your strength is beyond inspiring.",
-        "Hope is stronger than fear.",
         "Discover your true resilience.",
         "Positivity is the greatest super power.",
         "Embrace your inner strength.",

@@ -7,9 +7,9 @@ import Motivation from "./Motivation";
 
 export default function Exercises() {
     const messages = useMemo(() => [
+        "One step at a time.",
         "Progress, not perfection.", 
         "Healing begins with self love.", 
-        "One step at a time.", 
         "Your strength is beyond inspiring.",
         "Hope is stronger than fear.",
         "Discover your true resilience.",
