@@ -1,10 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Button from '@mui/joy/Button';
 import Select from '@mui/joy/Select';
 import FormLabel from '@mui/joy/FormLabel';
 import Option from '@mui/joy/Option';
+import Motivation from "./Motivation";
 
 export default function Exercises() {
+    const messages = useMemo(() => [
+        "Progress, not perfection.", 
+        "Healing begins with self love.", 
+        "One step at a time.", 
+        "Your strength is beyond inspiring.",
+        "Hope is stronger than fear.",
+        "Discover your true resilience.",
+        "Positivity is the greatest super power.",
+        "Embrace your inner strength.",
+        "Courage and perserverance daily.",
+        "You are so loved."
+      ], []); 
+    
+    const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+    
+    useEffect(() => {
+        const showToast = () => {
+            setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+            setTimeout(showToast, 10000); 
+        };
+    
+        setTimeout(showToast, 10000); 
+    
+        return () => {
+            clearTimeout(); 
+        };
+    }, [currentMessageIndex, messages]);
+    
+    const currentMessage = messages[currentMessageIndex];
+
     const [filterCategory, setFilterCategory] = React.useState("all");
     const [filterEquipment, setFilterEquipment] = useState("all");
     const [getUp, setGetUp] = useState({
@@ -70,6 +101,7 @@ export default function Exercises() {
 
     return (
         <div>
+            <Motivation message={currentMessage} />
             <div>
                 <h2>{getUp.name}</h2>
                 <a href={getUp.link} target="_blank" rel="noopener noreferrer">
