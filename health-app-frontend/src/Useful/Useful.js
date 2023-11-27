@@ -3,6 +3,7 @@ import Button from '@mui/joy/Button';
 import FormLabel from '@mui/joy/FormLabel';
 import { useState, useEffect, useMemo } from "react";
 import Input from '@mui/joy/Input';
+import './Useful.css';
 import Motivation from "./Motivation";
 
 // listed in alphabetical order
@@ -190,7 +191,7 @@ export default function Useful() {
     };
 
     return (
-        <div>
+        <div class="pad">
             <Motivation message={currentMessage} />
             <h1>Useful Rehabilitation Tools</h1>
             <Input
