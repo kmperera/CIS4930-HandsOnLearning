@@ -160,10 +160,10 @@ export default function Useful() {
     useEffect(() => {
         const showToast = () => {
             setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-            setTimeout(showToast, 8000); 
+            setTimeout(showToast, 5000); 
         };
     
-        setTimeout(showToast, 10000); 
+        setTimeout(showToast, 5000); 
     
         return () => {
             clearTimeout(); 
