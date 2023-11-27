@@ -8,24 +8,24 @@ import './Excercises.css';
 
 export default function Exercises() {
     const messages = useMemo(() => [
-        "One step at a time.",
-        "Progress, not perfection.", 
-        "Healing begins with self love.", 
-        "Your strength is beyond inspiring.",
-        "Hope is stronger than fear.",
-        "Discover your true resilience.",
-        "Positivity is the greatest super power.",
-        "Embrace your inner strength.",
-        "Courage and perserverance daily.",
-        "You are so loved."
+        "Strength comes from will.",
+        "One more step each day.", 
+        "Surround yourself with those you love.", 
+        "Faith is stronger than fear.",
+        "Your comeback is stronger than your setback.",
+        "Take a deep breath.",
+        "Gratitude is medicine.",
+        "Share your smile with the world.",
+        "Your bravery is so admired.",
+        "Your story inspires many."
       ], []); 
     
-    const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+    const [currentMes, setMessageIndex] = useState(0);
     
     useEffect(() => {
         const showToast = () => {
-            setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-            setTimeout(showToast, 10000); 
+            setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+            setTimeout(showToast, 8000); 
         };
     
         setTimeout(showToast, 10000); 
@@ -33,9 +33,9 @@ export default function Exercises() {
         return () => {
             clearTimeout(); 
         };
-    }, [currentMessageIndex, messages]);
+    }, [currentMes, messages]);
     
-    const currentMessage = messages[currentMessageIndex];
+    const currentMessage = messages[currentMes];
 
     const [filterCategory, setFilterCategory] = React.useState("all");
     const [filterEquipment, setFilterEquipment] = useState("all");

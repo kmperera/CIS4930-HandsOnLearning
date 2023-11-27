@@ -6,34 +6,34 @@ import { useState, useEffect, useMemo } from "react";
 
 export default function Evaluations() {
     const messages = useMemo(() => [
-        "Healing begins with self love.", 
-        "One step at a time.", 
-        "Progress, not perfection.",
-        "Your strength is beyond inspiring.",
-        "Hope is stronger than fear.",
-        "Discover your true resilience.",
-        "Positivity is the greatest super power.",
-        "Embrace your inner strength.",
-        "Courage and perserverance daily.",
-        "You are so loved."
+        "Strength comes from will.",
+        "One more step each day.", 
+        "Surround yourself with those you love.", 
+        "Faith is stronger than fear.",
+        "Your comeback is stronger than your setback.",
+        "Take a deep breath.",
+        "Gratitude is medicine.",
+        "Share your smile with the world.",
+        "Your bravery is so admired.",
+        "Your story inspires many."
       ], []); 
+
+      const [currentMes, setMessageIndex] = useState(0);
     
-    const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
-    
-    useEffect(() => {
-        const showToast = () => {
-            setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-            setTimeout(showToast, 10000); 
-        };
-    
-        setTimeout(showToast, 10000); 
-    
-        return () => {
-            clearTimeout(); 
-        };
-    }, [currentMessageIndex, messages]);
-    
-    const currentMessage = messages[currentMessageIndex];
+      useEffect(() => {
+          const showToast = () => {
+              setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+              setTimeout(showToast, 8000); 
+          };
+      
+          setTimeout(showToast, 10000); 
+      
+          return () => {
+              clearTimeout(); 
+          };
+      }, [currentMes, messages]);
+      
+      const currentMessage = messages[currentMes];
     
     return (
         <div>
