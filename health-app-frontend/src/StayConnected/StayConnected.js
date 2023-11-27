@@ -2,19 +2,20 @@ import React from "react"
 import { useState, useEffect, useMemo } from "react";
 import LocationComponent from './LocationComponent'
 import Motivation from "./Motivation";
+import './StayConnected.css';
 
 export default function StayConnected() {
     const messages = useMemo(() => [
-        "Strength comes from will.",
-        "One more step each day.", 
-        "Surround yourself with those you love.", 
-        "Faith is stronger than fear.",
-        "Your comeback is stronger than your setback.",
-        "Take a deep breath.",
-        "Gratitude is medicine.",
-        "Share your smile with the world.",
-        "Your bravery is so admired.",
-        "Your story inspires many."
+        "Triumph over adversity.",
+        "Your spirit is stronger than your challenge.", 
+        "Every step forward is a victory.", 
+        "Resilience drives recovery.",
+        "Thrive in this journey.",
+        "Your masterpiece is in progress.",
+        "You have the power inside.",
+        "Your unwavering spirit inspires.",
+        "Your courage is a guiding light.",
+        "The world is so thankful for you."
       ], []); 
     
       const [currentMes, setMessageIndex] = useState(0);
@@ -36,7 +37,7 @@ export default function StayConnected() {
     
 
     return (
-        <div>
+        <div class="pad">
             <Motivation message={currentMessage} />
             <h1>Stay Connected!</h1>
             <p>current location</p>

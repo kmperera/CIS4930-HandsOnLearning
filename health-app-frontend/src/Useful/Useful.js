@@ -143,16 +143,16 @@ const AllItems = [
 
 export default function Useful() {
     const messages = useMemo(() => [
-        "Embrace your inner strength.",
-        "Progress, not perfection.", 
-        "Healing begins with self love.", 
-        "One step at a time.", 
-        "Your strength is beyond inspiring.",
-        "Hope is stronger than fear.",
-        "Discover your true resilience.",
-        "Positivity is the greatest super power.",
-        "Courage and perserverance daily.",
-        "You are so loved."
+        "Be the light you are meant to be.",
+        "Share your gratitude.", 
+        "Appreciate the beauty of each day.", 
+        "Send your love to someone today.", 
+        "Your strength blooms in the garden of recovery.",
+        "Embrace healing and renewal.",
+        "Each sunrise is one to be thankful for.",
+        "Use your strength for greatness.",
+        "Thrive in the process of progress.",
+        "Be who are meant to be."
       ], []); 
     
       const [currentMes, setMessageIndex] = useState(0);

@@ -100,7 +100,7 @@ export default function Exercises() {
     const categories = Array.from(new Set(data.map(item => item.category)));
 
     return (
-        <div>
+        <div class="pad">
             <Motivation message={currentMessage} />
             <div className="featured-exercise">
             <h2>
