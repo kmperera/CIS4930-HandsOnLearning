@@ -4,7 +4,7 @@ import Select from '@mui/joy/Select';
 import FormLabel from '@mui/joy/FormLabel';
 import Option from '@mui/joy/Option';
 import Motivation from "./Motivation";
-import './Exercises.css';
+import './Excercises.css';
 
 export default function Exercises() {
     const messages = useMemo(() => [
