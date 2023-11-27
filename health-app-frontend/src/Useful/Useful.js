@@ -154,12 +154,12 @@ export default function Useful() {
         "You are so loved."
       ], []); 
     
-    const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+      const [currentMes, setMessageIndex] = useState(0);
     
     useEffect(() => {
         const showToast = () => {
-            setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-            setTimeout(showToast, 10000); 
+            setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+            setTimeout(showToast, 8000); 
         };
     
         setTimeout(showToast, 10000); 
@@ -167,9 +167,9 @@ export default function Useful() {
         return () => {
             clearTimeout(); 
         };
-      }, [currentMessageIndex, messages]);
+    }, [currentMes, messages]);
     
-    const currentMessage = messages[currentMessageIndex];
+    const currentMessage = messages[currentMes];
 
     const [list, setList] = useState(AllItems);
     const [SearchTerm, setSearch] = useState("");

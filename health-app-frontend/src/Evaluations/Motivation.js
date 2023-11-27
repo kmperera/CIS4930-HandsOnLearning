@@ -1,7 +1,7 @@
 import React from 'react';
 import './Motivation.css';
 
-const Motivation = ({ message, onClose }) => (
+const Motivation = ({ message }) => (
   <div className="toast-container">
     <div className="toast">
       {message}
