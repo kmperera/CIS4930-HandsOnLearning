@@ -5,12 +5,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import './Evaluations.css'
 
 
-export default function MultipleChoice({ questionName, options }) {
+export default function MultipleChoice({ questionName, options, value, onChange}) {
     return (
 
         <div>
             <h4>{questionName}</h4>
-            <RadioGroup name="question" className='question-box'>
+            <RadioGroup name="question" className='question-box' onChange = {onChange}>
                 {options.map((option, index) => (
                     <FormControlLabel className='form-label'
                         key={index}

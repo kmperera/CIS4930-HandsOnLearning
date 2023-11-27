@@ -2,8 +2,9 @@ import React from 'react';
 import Slider from '@mui/joy/Slider';
 import Typography from '@mui/joy/Typography';
 import './Evaluations.css'
+import Box from '@mui/joy/Box';
 
-export default function SliderChoice({ questionName }) {
+export default function SliderChoice({ questionName, value, onChange}) {
 
     const titleStyle = {
         fontFamily: 'Inter, sans-serif'
@@ -21,7 +22,7 @@ export default function SliderChoice({ questionName }) {
     ];
 
     return (
-        <div>
+        <Box sx={{marginBottom: '20px'}}>
             <h4>{questionName}</h4>
             <Slider
                 defaultValue={5}
@@ -29,6 +30,8 @@ export default function SliderChoice({ questionName }) {
                 max={10}
                 step={0.01}
                 marks={sliderMarks}
+                value={value}
+                onChange={onChange}
                 aria-label="Rating"
                 sx={{
                     width: '200px',
@@ -38,6 +41,6 @@ export default function SliderChoice({ questionName }) {
                 }}
             />
 
-        </div>
+        </Box>
     );
 };
