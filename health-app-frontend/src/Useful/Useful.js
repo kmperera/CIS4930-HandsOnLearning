@@ -202,9 +202,13 @@ export default function Useful() {
             <ul>
                 {list.map((item) => (
                     <li key={item.name}>
-                        <h2>{item.name}</h2>
+                        <h2>
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                            {item.name}
+                        </a>
+                        </h2>
                         <p>{item.description}</p>
-                        <p>${item.price} at {item.link}</p>
+                        <p>${item.price}</p>
                     </li>
                 ))}
             </ul>
