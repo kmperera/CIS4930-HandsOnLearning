@@ -1,34 +1,59 @@
 .featured-exercise {
-    margin: 20px 0;
+    padding: 5px 0;
+    margin: 0px;
+    text-align: center;
+    -webkit-text-fill-color: #d5e6ee;
 }
 .pad {
-    margin-left: 8px;
-    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-clip: #2e3f82;
+    background-color: #2e3f82;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.Header-Exercise {
+    text-align: center;
+    padding: 40px 0;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 200%;
+    background-color: #a6d2e8;
+    color: #1e2e6a;
 }
 
 .filters {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin: 0px;
 }
 
-.exercise-table {
-    width: 98%;
+.exercise-table{
+    width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 0px;
+    background-color: #dff7ff;
+    margin: 0px;
+    align-content: center;
 }
 
 .exercise-table th, .exercise-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     padding: 8px;
     text-align: left;
+    margin: 0px;
 }
 
 .exercise-table th {
-    background-color: #f2f2f2;
+    background-color: #5eacfe;
+    margin: 0px;
 }
 
 .exercise-table a {
     text-decoration: none;
     color: #007bff;
+    margin: 0px;
 }

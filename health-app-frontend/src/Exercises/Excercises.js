@@ -100,20 +100,25 @@ export default function Exercises() {
     const categories = Array.from(new Set(data.map(item => item.category)));
 
     return (
+        <div>
+            <div className='Header-Exercise'>
+                <h1>Rehabilitation Exercises</h1>
+            </div>
         <div class="pad">
             <Motivation message={currentMessage} />
             <div className="featured-exercise">
-            <h2>
+            <h2> Featured Exercise<br></br>→&#160;
                 <a href={getUp.link} target="_blank" rel="noopener noreferrer">
                     {getUp.name}
                 </a>
+                &#160;←
             </h2>
             </div>
 
             <div className="filters">
                 {/* Filter dropdowns */}
                 <FormLabel>
-                    Select Category:
+                    <h2>Select Category:&#160;&#160;</h2>
                     <Select
                         value={filterCategory}
                         onChange={(e) => setFilterCategory(e.target.value)}
@@ -126,7 +131,7 @@ export default function Exercises() {
                 </FormLabel>
 
                 <FormLabel>
-                    Select Equipment:
+                    <h2>Select Equipment:&#160;&#160;</h2>
                     <Select
                         value={filterEquipment}
                         onChange={(e) => setFilterEquipment(e.target.value)}
@@ -160,6 +165,7 @@ export default function Exercises() {
                     ))}
                 </tbody>
             </table>
+        </div>
         </div>
     );
 }
