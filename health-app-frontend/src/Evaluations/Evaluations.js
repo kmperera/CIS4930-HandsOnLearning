@@ -2,6 +2,7 @@ import React from "react"
 import Button from '@mui/joy/Button';
 import Motivation from "./Motivation";
 import { useState, useEffect, useMemo } from "react";
+import './Evaluations.css';
 
 
 export default function Evaluations() {
@@ -36,7 +37,7 @@ export default function Evaluations() {
       const currentMessage = messages[currentMes];
     
     return (
-        <div>
+        <div class="pad">
             <Motivation message={currentMessage}/>
         </div>
     );
