@@ -6,16 +6,16 @@ import { useState, useEffect, useMemo } from "react";
 
 export default function Evaluations() {
     const messages = useMemo(() => [
-        "Strength comes from will.",
-        "One more step each day.", 
-        "Surround yourself with those you love.", 
-        "Faith is stronger than fear.",
-        "Your comeback is stronger than your setback.",
-        "Take a deep breath.",
-        "Gratitude is medicine.",
-        "Share your smile with the world.",
-        "Your bravery is so admired.",
-        "Your story inspires many."
+        "Strength grows from challenge.",
+        "Every challenge in an opportunity.", 
+        "Strive for progress over perfection.", 
+        "Your potential is boundless.",
+        "Create your dream reality.",
+        "Celebrate each step.",
+        "Healing is a journey.",
+        "The power is within you.",
+        "Own your discipline towards progress.",
+        "Respond to your challenges optimistically."
       ], []); 
 
       const [currentMes, setMessageIndex] = useState(0);
@@ -23,10 +23,10 @@ export default function Evaluations() {
       useEffect(() => {
           const showToast = () => {
               setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-              setTimeout(showToast, 8000); 
+              setTimeout(showToast, 5000); 
           };
       
-          setTimeout(showToast, 10000); 
+          setTimeout(showToast, 5000); 
       
           return () => {
               clearTimeout(); 
