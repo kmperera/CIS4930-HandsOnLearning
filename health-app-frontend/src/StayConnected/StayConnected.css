@@ -2,3 +2,46 @@
     margin-left: 8px;
     margin-right: 8px;
 }
+.two-sections-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150vh;
+    height: 100vh; /* Make the container take up the full height of the viewport */
+  }
+
+.section {
+    width: 100%;
+    max-width: 100%;
+    height: 30%;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #cfe4f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+.big-square-button {
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: 2px solid #0056b3;
+    border-radius: 10px; /* Adjust the border-radius to control the roundness */
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
