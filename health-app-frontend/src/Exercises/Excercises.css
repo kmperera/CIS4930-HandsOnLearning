@@ -1,0 +1,30 @@
+.featured-exercise {
+    margin: 20px 0;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.exercise-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.exercise-table th, .exercise-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.exercise-table th {
+    background-color: #f2f2f2;
+}
+
+.exercise-table a {
+    text-decoration: none;
+    color: #007bff;
+}

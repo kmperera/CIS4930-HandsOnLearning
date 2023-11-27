@@ -4,6 +4,7 @@ import Select from '@mui/joy/Select';
 import FormLabel from '@mui/joy/FormLabel';
 import Option from '@mui/joy/Option';
 import Motivation from "./Motivation";
+import './Exercises.css';
 
 export default function Exercises() {
     const messages = useMemo(() => [
@@ -102,17 +103,17 @@ export default function Exercises() {
     return (
         <div>
             <Motivation message={currentMessage} />
-            <div>
+            <div className="featured-exercise">
                 <h2>{getUp.name}</h2>
                 <a href={getUp.link} target="_blank" rel="noopener noreferrer">
                     {/*<img src={getUp.thumbnail} alt={`${getUp.name} Thumbnail`} />*/}
                 </a>
             </div>
 
-            {/* Filter dropdowns */}
-            <div>
+            <div className="filters">
+                {/* Filter dropdowns */}
                 <FormLabel>
-                    Select Category and/or Equipment:
+                    Select Category:
                     <Select
                         value={filterCategory}
                         onChange={(e) => setFilterCategory(e.target.value)}
@@ -125,20 +126,21 @@ export default function Exercises() {
                 </FormLabel>
 
                 <FormLabel>
+                    Select Equipment:
                     <Select
-                    value={filterEquipment}
-                    onChange={(e) => setFilterEquipment(e.target.value)}
-        >
-                    <Option value="all">All Equipment</Option>
-                    {Array.from(new Set(data.map(item => item.equipment))).map(equipment => (
-                        <Option key={equipment} value={equipment}>{equipment}</Option>
-                    ))}
+                        value={filterEquipment}
+                        onChange={(e) => setFilterEquipment(e.target.value)}
+                    >
+                        <Option value="all">All Equipment</Option>
+                        {Array.from(new Set(data.map(item => item.equipment))).map(equipment => (
+                            <Option key={equipment} value={equipment}>{equipment}</Option>
+                        ))}
                     </Select>
                 </FormLabel>
             </div>
 
             {/* Table */}
-            <table>
+            <table className="exercise-table">
                 <thead>
                     <tr>
                         <th>Exercise</th>
@@ -152,7 +154,7 @@ export default function Exercises() {
                         <tr key={item.name}>
                             <td>{item.name}</td>
                             <td>{item.category}</td>
-                            <td>{item.link}</td>
+                            <td><a href={item.link} target="_blank" rel="noopener noreferrer">Watch Video</a></td>
                             <td>{item.equipment}</td>
                         </tr>
                     ))}
