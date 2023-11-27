@@ -77,12 +77,22 @@ export default function StayConnected() {
             <div className="two-sections-container">
       <div className="section">
         <h2>JOIN</h2>
-        <p>Connect journeys with other stroke survivors</p>
+        <p>Social connection is a key factor for improvement in stroke recovery.
+        </p>
+        <p>Take the opportunity to cross journeys with other survivors.
+        </p>
+        <p>Visit the American Stroke Association to connect with a support group in your area!
+        </p>
         <BigSquareButton />
       </div>
       <div className="section">
         <h2>LEAD</h2>
-        <p>Start a group of your own</p>
+        <p>Don't see a group that fits your needs?
+        </p>
+        <p>Want to take initiative in being a group leader?
+        </p>
+        <p>Start your own support group today with Meetup!
+        </p>
         <StartGroup />
       </div>
     </div>
