@@ -6,6 +6,7 @@ import Option from '@mui/joy/Option';
 import Motivation from "./Motivation";
 import './Excercises.css';
 import Navbar from "../Navbar";
+import { MenuItem } from "@mui/joy";
 
 export default function Exercises() {
     const messages = useMemo(() => [
@@ -125,9 +126,9 @@ export default function Exercises() {
                             value={filterCategory}
                             onChange={(e) => setFilterCategory(e.target.value)}
                         >
-                            <Option value="all">All Categories</Option>
+                            <MenuItem value="all">All Categories</MenuItem>
                             {categories.map(category => (
-                                <Option key={category} value={category}>{category}</Option>
+                                <MenuItem key={category} value={category}>{category}</MenuItem>
                             ))}
                         </Select>
                     </FormLabel>
@@ -140,7 +141,7 @@ export default function Exercises() {
                         >
                             <MenuItem value="all">All Equipment</MenuItem>
                             {Array.from(new Set(data.map(item => item.equipment))).map(equipment => (
-                                <Option key={equipment} value={equipment}>{equipment}</Option>
+                                <MenuItem key={equipment} value={equipment}>{equipment}</MenuItem>
                             ))}
                         </Select>
                     </FormLabel>

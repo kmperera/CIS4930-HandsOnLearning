@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import Button from '@mui/joy/Button';
 import Box from '@mui/joy/Box';
 import Input from "@mui/joy/Input";
@@ -16,23 +16,36 @@ function calculateResults(one, two, three, four, five, six, seven, eight, nine, 
 
 
 export default function Evaluations() {
-
-      const [currentMes, setMessageIndex] = useState(0);
     
-      useEffect(() => {
+    const messages = useMemo(() => [
+        "Strength comes from will.",
+        "One more step each day.",
+        "Surround yourself with those you love.",
+        "Faith is stronger than fear.",
+        "Your comeback is stronger than your setback.",
+        "Take a deep breath.",
+        "Gratitude is medicine.",
+        "Share your smile with the world.",
+        "Your bravery is so admired.",
+        "Your story inspires many."
+    ], []);
+
+    const [currentMes, setMessageIndex] = useState(0);
+
+    useEffect(() => {
         const showToast = () => {
             setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
         };
-    
+
         const intervalId = setInterval(showToast, 5000);
 
         return () => {
             clearInterval(intervalId);
         };
-        }, [currentMes, messages]);
-      
-      const currentMessage = messages[currentMes];
-    
+    }, [currentMes, messages]);
+
+    const currentMessage = messages[currentMes];
+
     const [Q1, setQ1] = useState("No Choice Selected");
     const [Q2, setQ2] = useState("No Choice Selected");
     const [Q3, setQ3] = useState("No Choice Selected");
