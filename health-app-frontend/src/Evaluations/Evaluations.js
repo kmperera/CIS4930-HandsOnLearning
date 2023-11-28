@@ -11,18 +11,63 @@ import Motivation from "./Motivation";
 import Navbar from "../Navbar";
 import './Evaluations.css';
 
+const answers = {
+
+    "less than one month": 0,
+    "1-3 months ago": 2,
+    "3-6 months ago": 3,
+    "More than 6 months ago": 4,
+
+    "Ischemic Stroke": 1,
+    "Hemorrhagic Stroke": 2,
+    "Transient Ischemic Attack": 3,
+    "Unsure": 4,
+
+    "Right": 1,
+    "Left": 1,
+    "Both": 3,
+    "No significant decline": 4,
+
+    "Fully independent": 10,
+    "Mostly independent, some assistance needed": 5,
+    "Dependent on assistance for many activities": 3,
+    "Fully dependent on others": -30,
+
+    "Physical Therapy": 3,
+    "Occupational Therapy": 3,
+    "Both Physical and Occupational Therapy": 6,
+    "None": 3,
+
+    "No noticeable changes": 5,
+    "Mild changes": 2,
+    "Significant changes": 0,
+    "Severe changes": 0,
+
+    "No Choice Selected": -1,
+};
+
+
 function calculateResults(one, two, three, four, five, six, seven, eight, nine, ten) {
     let value = seven / 4 + eight / 4 + nine / 4 + ten / 4;
+    console.log(one);
+    value += answers[one];
+    console.log("value swag " + answers[one]);
+    value += answers[two];
+    value += answers[three];
+    value += answers[four];
+    value += answers[five];
+    value += answers[six];
+
     console.log('results: ' + value)
 }
 
 
 export default function Evaluations() {
-    
+
     const messages = useMemo(() => [
         "Strength grows from challenge.",
-        "Every challenge in an opportunity.", 
-        "Strive for progress over perfection.", 
+        "Every challenge in an opportunity.",
+        "Strive for progress over perfection.",
         "Your potential is boundless.",
         "Create your dream reality.",
         "Celebrate each step.",
@@ -120,22 +165,101 @@ export default function Evaluations() {
         console.log(Q2);
         console.log(Q3);
         console.log(calculateResults(Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10));
+
         setQuizFinished(true);
-        setTotal(-1);
+        setTotal(calculateResults(Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10));
     }
 
     return (
         <div>
             <div className='flex-wrapper'>
-                <Motivation message={currentMessage}/>
+                <Motivation message={currentMessage} />
                 <div>
                     <Navbar />
 
                     <div className="body">
                         {quizFinished ? (
-                            (total == 1) ? (<><p>total was equal to one.</p></>
+                            (total > 0) ? (
+                                (total > 10) ? (
+                                    (total > 20) ? (
+                                        <div>
+                                            <h1>Stage 3/4 - Good Progress</h1>
+                                            <h2>Reccommended Exercises- </h2>
+                                            <ul>
+                                                <li>
+                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                </li>
+                                                <li>
+                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                </li>
+                                                <li>
+                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                </li>
+                                                <li>
+                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    ) : (
+                                        <div>
+                                            <h1>Stage 3/4 - Good Progress</h1>
+                                            <h2>Reccommended Exercises- </h2>
+                                            <ul>
+                                                <li>
+                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                </li>
+                                                <li>
+                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                </li>
+                                                <li>
+                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                </li>
+                                                <li>
+                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )
+                                ) : (
+                                    <div>
+                                        <h1>Stage 2/4 - Medium Progress</h1>
+                                        <h2>Reccommended Exercises- </h2>
+                                        <ul>
+                                            <li>
+                                                <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                            </li>
+                                            <li>
+                                                <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                            </li>
+                                            <li>
+                                                <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                            </li>
+                                            <li>
+                                                <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                )
                             ) : (
-                                <>Progress Level - Low-Moderate Progress</>
+                                <div>
+                                    <h1>Stage 1/4 - Mild Progress</h1>
+                                    <p>This is the first state of stroke recovery, and may usually come with limited moovement. </p>
+                                    <h2>Reccommended Exercises- </h2>
+                                    <ul>
+                                        <li>
+                                            <p>Wrist Curl Exercise (<a href='https://www.youtube.com/watch?v=i0JYsLyJEnE'>link</a>)</p>
+                                        </li>
+                                        <li>
+                                            <p>Crumbling a Piece of Paper (<a href='https://www.youtube.com/watch?v=gqBHIX-2xHY'>link</a>)</p>
+                                        </li>
+                                        <li>
+                                            <p>Hand Rolling Movement (<a href='https://www.youtube.com/watch?v=i0JYsLyJEnE'>link</a>)</p>
+                                        </li>
+                                        <li>
+                                            <p>Palms Up and Down (<a href='https://www.youtube.com/watch?v=i0JYsLyJEnE'>link</a>)</p>
+                                        </li>
+                                    </ul>
+                                </div>
                             )
                         ) : (<div>
                             <h1>Stroke Recovery Questionnare</h1>
@@ -143,7 +267,7 @@ export default function Evaluations() {
                                 value={Q1}
                                 onChange={handleQ1}
                                 questionName="1. How long has it been since your stroke?"
-                                options={['<1 month', '<3 months', '<1 year', '>1 year']}
+                                options={['less than one month', '1-3 months ago', '3-6 months ago', 'More than 6 months ago']}
                             />
                             <MultipleChoice
                                 value={Q2}
@@ -217,6 +341,13 @@ export default function Evaluations() {
                     </Typography>
                 </Box>
             </div>
-        </div>
+        </div >
     );
 }
+
+/* 
+Google scholar links
+
+
+
+*/
