@@ -4,6 +4,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';  
 import InputLabel from '@mui/material/InputLabel';  
 import Motivation from "./Motivation";
+import Navbar from "../Navbar";
 import './Excercises.css';
 
 export default function Exercises() {
@@ -101,9 +102,7 @@ export default function Exercises() {
 
     return (
         <div>
-            <div className='Header-Exercise'>
-                <h1>Rehabilitation Exercises</h1>
-            </div>
+            <Navbar></Navbar>
             <div className="pad">
                 <Motivation message={currentMessage} />
                 <div className="featured-exercise">
@@ -119,11 +118,12 @@ export default function Exercises() {
                     {/* Filter dropdowns */}
                     <div>
                         <InputLabel>
-                            <h2>Select Category:&#160;&#160;</h2>
+                            <h2 className = "subheader-2-3">Select Category:&#160;&#160;</h2>
                         </InputLabel>
                         <Select
                             value={filterCategory}
                             onChange={(e) => setFilterCategory(e.target.value)}
+                            className = "select-menu"
                         >
                             <MenuItem value="all">All Categories</MenuItem>
                             {categories.map(category => (
@@ -134,13 +134,15 @@ export default function Exercises() {
 
                     <div>
                         <InputLabel>
-                            <h2>Select Equipment:&#160;&#160;</h2>
+                            <h2 className = "subheader-2-3">Select Equipment:&#160;&#160;</h2>
                         </InputLabel>
                         <Select
                             value={filterEquipment}
                             onChange={(e) => setFilterEquipment(e.target.value)}
+                            className = "select-menu"
+
                         >
-                            <MenuItem value="all">All Equipment</MenuItem>
+                            <MenuItem value="all" className = "select-menu">All Equipment</MenuItem>
                             {Array.from(new Set(data.map(item => item.equipment))).map(equipment => (
                                 <MenuItem key={equipment} value={equipment}>{equipment}</MenuItem>
                             ))}

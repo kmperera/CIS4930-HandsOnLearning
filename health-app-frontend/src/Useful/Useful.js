@@ -12,17 +12,17 @@ const AllItems = [
     {
         name: 'Arm Peddlers',
         description: 'Arm Peddlers are equipment that focus of arm or leg movement. Provides bilateral exercise.',
-        price: 36.99, 
+        price: 36.99,
         link: 'https://www.amazon.com/s?k=arm+peddler&ref=nb_sb_noss_1'
     }, {
         name: 'Arm Skates',
         description: 'Arm Skates are equipment that help with range-of-motion. Limit amount of work required. Helps reintroduce movement to the affected arm.',
-        price: 21.00, 
+        price: 21.00,
         link: 'https://www.amazon.com/s?k=arm+skate&ref=nb_sb_noss_2'
     }, {
         name: 'Balance Boards',
         description: 'Balance Boards are equipment that work on balance. Targets the vestibular system and improves walking ability. Balance boards with ricking bases have more stability than other types.',
-        price: 15.99, 
+        price: 15.99,
         link: 'https://www.amazon.com/Yes4All-Wooden-Wobble-Balance-Board/dp/B00WJJJX2Q/?th=1'
     }, {
         name: 'Brain Out',
@@ -42,7 +42,7 @@ const AllItems = [
     }, {
         name: 'CT Speech and Cognitive Therapy App',
         description: 'CT Speech and Cognitive Therapy App is an application that improves speech and cognitive abilities. Assesses ability level and assigns proper exercise (out of thousands available). Your speech therapist can assign exercises through the app.',
-        price: 29.99 + ' a month', 
+        price: 29.99 + ' a month',
         link: 'https://www.flintrehab.com/product/speech-therapy/?utm_source=Blog&utm_medium=Speech%20Article&utm_content=CT%20App'
     }, {
         name: 'Dumbbells and Wrist/Ankle Weights',
@@ -52,7 +52,7 @@ const AllItems = [
     }, {
         name: 'Electrical Stimulation Machine',
         description: 'Electrical Stimulation Machine is equipment that focuses on muscle weakness. Helps with paralysis and severe muscle weakness. Sends gentle electrical stimulation to the desired muscles, which helps them contract. Introduces movement and stimulate the brain. IMPORTANT: to work with a therapist to safely operate.',
-        price: 23.99, 
+        price: 23.99,
         link: 'https://www.amazon.com/s?k=electrical+stimulation+for+rehab&ref=nb_sb_noss'
     }, {
         name: 'ELEVATE',
@@ -67,7 +67,7 @@ const AllItems = [
     }, {
         name: 'Hand Exercise Balls with Extension Add-On',
         description: 'Hand Exercise Balls with Extension Add-On are equipment that targets finger flexibility and extension. Average stress balls work too, but the extension offers more rehabilitation exercise options.',
-        price: 24.95, 
+        price: 24.95,
         link: 'https://www.amazon.com/Handmaster-Plus-Physical-Therapy-Exerciser/dp/B00CTG3TQU/'
     }, {
         name: 'Language Therapy 4-in-1',
@@ -82,12 +82,12 @@ const AllItems = [
     }, {
         name: 'Mirror Box',
         description: 'Mirror Box is equipment that helps with hand rehabilitation. “Tricks” that brain into thinking both hands are moving, which helps neuroplasticity and encourages movement. Helps with hand paralysis and severe spasticity.',
-        price: 59.99, 
+        price: 59.99,
         link: 'https://www.amazon.com/s?k=mirror+therapy&ref=nb_sb_noss_1'
     }, {
         name: 'MusicGlove Hand Therapy',
         description: 'MusicGlove Hand Therapy is equipment that improves hand function. Music-based therapy device that motivates you to exercise using a musical game. Stimulate the brain and promotes neuroplasticity.',
-        price: 369.00, 
+        price: 369.00,
         link: 'https://www.flintrehab.com/product/musicglove-hand-therapy/?utm_source=Blog&utm_medium=MusicGlove%20Inside%20Article'
     }, {
         name: 'Proloquo2Go',
@@ -107,7 +107,7 @@ const AllItems = [
     }, {
         name: 'Stationary Recumbent Bikes',
         description: 'Stationary Recumbent Bikes are equipment that build walking skills. Encourages bilateral movement and stimulates the brain. Offers more support and an easier experience than regular stationary bikes.',
-        price: 219.99, 
+        price: 219.99,
         link: 'https://www.amazon.com/s?k=recumbent+bike&ref=nb_sb_noss_2'
     }, {
         name: 'Therapy Putty',
@@ -139,38 +139,38 @@ const AllItems = [
         description: '',
         price: ,
         link: ''
-    }, */ 
+    }, */
 ];
 
 export default function Useful() {
     const messages = useMemo(() => [
         "Be the light you are meant to be.",
-        "Share your gratitude.", 
-        "Appreciate the beauty of each day.", 
-        "Send your love to someone today.", 
+        "Share your gratitude.",
+        "Appreciate the beauty of each day.",
+        "Send your love to someone today.",
         "Your strength blooms in the garden of recovery.",
         "Embrace healing and renewal.",
         "Each sunrise is one to be thankful for.",
         "Use your strength for greatness.",
         "Thrive in the process of progress.",
         "Be who are meant to be."
-      ], []); 
-    
-      const [currentMes, setMessageIndex] = useState(0);
-    
+    ], []);
+
+    const [currentMes, setMessageIndex] = useState(0);
+
     useEffect(() => {
         const showToast = () => {
             setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
         };
-    
+
         const intervalId = setInterval(showToast, 5000);
 
         return () => {
             clearInterval(intervalId);
         };
-        }, [currentMes, messages]);
-        
-    
+    }, [currentMes, messages]);
+
+
     const currentMessage = messages[currentMes];
 
     const [list, setList] = useState(AllItems);
@@ -196,29 +196,33 @@ export default function Useful() {
     };
 
     return (
-        <div class="pad">
-            <Navbar></Navbar>
-            <Motivation message={currentMessage} />
-            <h1 style={headingStyle}> Useful Rehabilitation Tools</h1>
-            <Input
-                label="search"
-                value={SearchTerm}
-                onChange={handleChange}
-            />
-            <Button onClick={search}>Search</Button>
-            <ul>
-                {list.map((item) => (
-                    <li key={item.name}>
-                        <h2>
-                        <a href={item.link} target="_blank" rel="noopener noreferrer">
-                            {item.name}
-                        </a>
-                        </h2>
-                        <p style={headingStyle}>{item.description}</p>
-                        <p style={headingStyle}>${item.price}</p>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <>
+            <div class="pad-2">
+                <Navbar></Navbar>
+                <Motivation message={currentMessage} />
+                <h1 className='useful-header' style={headingStyle}> Useful Rehabilitation Tools</h1>
+                <div>
+                    <Input
+                        label="search"
+                        value={SearchTerm}
+                        onChange={handleChange}
+                    />
+                    <Button onClick={search}>Search</Button>
+                </div>
+                <ul>
+                    {list.map((item) => (
+                        <li key={item.name}>
+                            <h2>
+                                <a className="white-link" href={item.link} target="_blank" rel="noopener noreferrer">
+                                    {item.name}
+                                </a>
+                            </h2>
+                            <p style={headingStyle}>{item.description}</p>
+                            <p style={headingStyle}>${item.price}</p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </>
     );
 }

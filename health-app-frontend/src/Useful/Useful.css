@@ -4,3 +4,15 @@
     padding-bottom: 16px;
     margin: 0px;
 }
+
+.white-link {
+    color: white;
+}
+
+.useful-header {
+    margin-left: 20px;
+}
+
+.search-bar {
+    width: '80vw';
+}
