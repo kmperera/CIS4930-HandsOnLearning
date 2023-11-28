@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Button from '@mui/joy/Button';
-import Select from '@mui/joy/Select';
-import FormLabel from '@mui/joy/FormLabel';
-import Option from '@mui/joy/Option';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';  
+import InputLabel from '@mui/material/InputLabel';  
 import Motivation from "./Motivation";
 import './Excercises.css';
-import Navbar from "../Navbar";
-import { MenuItem } from "@mui/joy";
 
 export default function Exercises() {
     const messages = useMemo(() => [
@@ -64,7 +62,7 @@ export default function Exercises() {
         { name: "Small Step-Ups with Support", category: "Hip, Leg", link: "https://youtu.be/rFJ8JJCdYx0", equipment: "Steps" },
         { name: "Standing Hip Abduction with Support", category: "Hip, Leg", link: "https://youtu.be/6z2BSlkkwgg", equipment: "Table" },
         { name: "Supine Heel Slides", category: "Hip, Knee, Leg", link: "https://youtu.be/Awtwxl3xd0U", equipment: "None" },
-        { name: "Supine Knees Side to Side (Trunk Rotation)", category: "Hip, Knee, Torse", link: "https://youtu.be/MzRmK2IK3-Q", equipment: "None" },
+        { name: "Supine Knees Side to Side (Trunk Rotation)", category: "Hip, Knee, Torso", link: "https://youtu.be/MzRmK2IK3-Q", equipment: "None" },
         { name: "Supine Leg Crossing", category: "Hip", link: "https://youtu.be/bWUrxgAE-do", equipment: "None" },
         { name: "Supported Mini Squats", category: "Leg", link: "https://youtu.be/gfzxMtHnRpI", equipment: "Chair" },
         { name: "Dynamic Weight Shifts", category: "Balance", link: "https://youtu.be/BEd-TMi7Le0", equipment: "Chair" },
@@ -103,11 +101,10 @@ export default function Exercises() {
 
     return (
         <div>
-            <Navbar></Navbar>
             <div className='Header-Exercise'>
                 <h1>Rehabilitation Exercises</h1>
             </div>
-            <div class="pad">
+            <div className="pad">
                 <Motivation message={currentMessage} />
                 <div className="featured-exercise">
                     <h2> Featured Exercise<br></br>→&#160;
@@ -120,8 +117,10 @@ export default function Exercises() {
 
                 <div className="filters">
                     {/* Filter dropdowns */}
-                    <FormLabel>
-                        <h2>Select Category:&#160;&#160;</h2>
+                    <div>
+                        <InputLabel>
+                            <h2>Select Category:&#160;&#160;</h2>
+                        </InputLabel>
                         <Select
                             value={filterCategory}
                             onChange={(e) => setFilterCategory(e.target.value)}
@@ -131,10 +130,12 @@ export default function Exercises() {
                                 <MenuItem key={category} value={category}>{category}</MenuItem>
                             ))}
                         </Select>
-                    </FormLabel>
+                    </div>
 
-                    <FormLabel>
-                        <h2>Select Equipment:&#160;&#160;</h2>
+                    <div>
+                        <InputLabel>
+                            <h2>Select Equipment:&#160;&#160;</h2>
+                        </InputLabel>
                         <Select
                             value={filterEquipment}
                             onChange={(e) => setFilterEquipment(e.target.value)}
@@ -144,7 +145,7 @@ export default function Exercises() {
                                 <MenuItem key={equipment} value={equipment}>{equipment}</MenuItem>
                             ))}
                         </Select>
-                    </FormLabel>
+                    </div>
                 </div>
 
                 {/* Table */}
