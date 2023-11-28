@@ -28,13 +28,14 @@ export default function Exercises() {
             setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
             setTimeout(showToast, 5000);
         };
-
-        setTimeout(showToast, 5000);
-
+    
+        const timeoutId = setTimeout(showToast, 5000);
+    
         return () => {
-            clearTimeout();
+            clearTimeout(timeoutId);
         };
     }, [currentMes, messages]);
+    
 
     const currentMessage = messages[currentMes];
 
@@ -138,7 +139,7 @@ export default function Exercises() {
                             value={filterEquipment}
                             onChange={(e) => setFilterEquipment(e.target.value)}
                         >
-                            <Option value="all">All Equipment</Option>
+                            <MenuItem value="all">All Equipment</MenuItem>
                             {Array.from(new Set(data.map(item => item.equipment))).map(equipment => (
                                 <Option key={equipment} value={equipment}>{equipment}</Option>
                             ))}
