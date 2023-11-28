@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Motivation from "./Motivation";
 import Navbar from "../Navbar";
-import {Box, Typography} from '@mui/joy';
+import { Box, Typography } from '@mui/joy';
 import './Excercises.css';
 
 export default function Exercises() {

@@ -49,9 +49,7 @@ const answers = {
 
 function calculateResults(one, two, three, four, five, six, seven, eight, nine, ten) {
     let value = seven / 4 + eight / 4 + nine / 4 + ten / 4;
-    console.log(one);
     value += answers[one];
-    console.log("value swag " + answers[one]);
     value += answers[two];
     value += answers[three];
     value += answers[four];
@@ -110,26 +108,26 @@ export default function Evaluations() {
     const handleQ1 = (newValue) => {
         let value = newValue.target.defaultValue;
         setQ1(value);
-        console.log('Q1 Value: ' + Q1);
+
     };
 
     const handleQ2 = (newValue) => {
         console.log(newValue);
         let value = newValue.target.defaultValue;
         setQ2(value);
-        console.log('Q2 Value: ' + Q2);
+
     };
 
     const handleQ3 = (newValue) => {
         let value = newValue.target.defaultValue;
         setQ3(value);
-        console.log('Q3 Value: ' + Q3);
+ 
     };
 
     const handleQ4 = (newValue) => {
         let value = newValue.target.defaultValue;
         setQ4(value);
-        console.log('Q4 Value: ' + Q4);
+
     };
 
     const handleQ5 = (newValue) => {
@@ -145,7 +143,7 @@ export default function Evaluations() {
 
     const handleQ7 = (event, newValue) => {
         setQ7(newValue);
-        console.log('Q7 Value: ' + Q7);
+
     };
 
     const handleQ8 = (event, newValue) => {
@@ -161,14 +159,10 @@ export default function Evaluations() {
     };
 
     const handleSubmit = () => {
-        console.log(Q1);
-        console.log(Q2);
-        console.log(Q3);
-        console.log(calculateResults(Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10));
 
         setQuizFinished(true);
         setTotal(calculateResults(Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10));
-        console.log('total: ' + total);
+
     }
 
     return (

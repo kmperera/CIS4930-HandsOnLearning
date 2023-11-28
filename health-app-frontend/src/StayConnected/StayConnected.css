@@ -1,6 +1,7 @@
 .pad-2 {
   background-color: #2e3f82;
   background-clip: #2e3f82;
+  min-height: 99vh;
 }
 
 .two-sections-container {
