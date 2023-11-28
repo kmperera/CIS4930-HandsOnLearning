@@ -5,12 +5,13 @@ import FormLabel from '@mui/joy/FormLabel';
 import Option from '@mui/joy/Option';
 import Motivation from "./Motivation";
 import './Excercises.css';
+import Navbar from "../Navbar";
 
 export default function Exercises() {
     const messages = useMemo(() => [
         "Strength comes from will.",
-        "One more step each day.", 
-        "Surround yourself with those you love.", 
+        "One more step each day.",
+        "Surround yourself with those you love.",
         "Faith is stronger than fear.",
         "Your comeback is stronger than your setback.",
         "Take a deep breath.",
@@ -18,10 +19,10 @@ export default function Exercises() {
         "Share your smile with the world.",
         "Your bravery is so admired.",
         "Your story inspires many."
-      ], []); 
-    
+    ], []);
+
     const [currentMes, setMessageIndex] = useState(0);
-    
+
     useEffect(() => {
         const showToast = () => {
             setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
@@ -34,6 +35,7 @@ export default function Exercises() {
         };
         }, [currentMes, messages]);
     
+
     const currentMessage = messages[currentMes];
 
     const [filterCategory, setFilterCategory] = React.useState("all");
@@ -100,71 +102,72 @@ export default function Exercises() {
 
     return (
         <div>
+            <Navbar></Navbar>
             <div className='Header-Exercise'>
                 <h1>Rehabilitation Exercises</h1>
             </div>
-        <div class="pad">
-            <Motivation message={currentMessage} />
-            <div className="featured-exercise">
-            <h2> Featured Exercise<br></br>→&#160;
-                <a href={getUp.link} target="_blank" rel="noopener noreferrer">
-                    {getUp.name}
-                </a>
-                &#160;←
-            </h2>
-            </div>
+            <div class="pad">
+                <Motivation message={currentMessage} />
+                <div className="featured-exercise">
+                    <h2> Featured Exercise<br></br>→&#160;
+                        <a href={getUp.link} target="_blank" rel="noopener noreferrer">
+                            {getUp.name}
+                        </a>
+                        &#160;←
+                    </h2>
+                </div>
 
-            <div className="filters">
-                {/* Filter dropdowns */}
-                <FormLabel>
-                    <h2>Select Category:&#160;&#160;</h2>
-                    <Select
-                        value={filterCategory}
-                        onChange={(e) => setFilterCategory(e.target.value)}
-                    >
-                        <Option value="all">All Categories</Option>
-                        {categories.map(category => (
-                            <Option key={category} value={category}>{category}</Option>
-                        ))}
-                    </Select>
-                </FormLabel>
+                <div className="filters">
+                    {/* Filter dropdowns */}
+                    <FormLabel>
+                        <h2>Select Category:&#160;&#160;</h2>
+                        <Select
+                            value={filterCategory}
+                            onChange={(e) => setFilterCategory(e.target.value)}
+                        >
+                            <Option value="all">All Categories</Option>
+                            {categories.map(category => (
+                                <Option key={category} value={category}>{category}</Option>
+                            ))}
+                        </Select>
+                    </FormLabel>
 
-                <FormLabel>
-                    <h2>Select Equipment:&#160;&#160;</h2>
-                    <Select
-                        value={filterEquipment}
-                        onChange={(e) => setFilterEquipment(e.target.value)}
-                    >
-                        <Option value="all">All Equipment</Option>
-                        {Array.from(new Set(data.map(item => item.equipment))).map(equipment => (
-                            <Option key={equipment} value={equipment}>{equipment}</Option>
-                        ))}
-                    </Select>
-                </FormLabel>
-            </div>
+                    <FormLabel>
+                        <h2>Select Equipment:&#160;&#160;</h2>
+                        <Select
+                            value={filterEquipment}
+                            onChange={(e) => setFilterEquipment(e.target.value)}
+                        >
+                            <MenuItem value="all">All Equipment</MenuItem>
+                            {Array.from(new Set(data.map(item => item.equipment))).map(equipment => (
+                                <Option key={equipment} value={equipment}>{equipment}</Option>
+                            ))}
+                        </Select>
+                    </FormLabel>
+                </div>
 
-            {/* Table */}
-            <table className="exercise-table">
-                <thead>
-                    <tr>
-                        <th>Exercise</th>
-                        <th>Category</th>
-                        <th>Link</th>
-                        <th>Equipment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredData.map(item => (
-                        <tr key={item.name}>
-                            <td>{item.name}</td>
-                            <td>{item.category}</td>
-                            <td><a href={item.link} target="_blank" rel="noopener noreferrer">Watch Video</a></td>
-                            <td>{item.equipment}</td>
+                {/* Table */}
+                <table className="exercise-table">
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Category</th>
+                            <th>Link</th>
+                            <th>Equipment</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {filteredData.map(item => (
+                            <tr key={item.name}>
+                                <td>{item.name}</td>
+                                <td>{item.category}</td>
+                                <td><a href={item.link} target="_blank" rel="noopener noreferrer">Watch Video</a></td>
+                                <td>{item.equipment}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }
