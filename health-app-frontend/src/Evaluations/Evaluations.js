@@ -58,7 +58,7 @@ function calculateResults(one, two, three, four, five, six, seven, eight, nine, 
     value += answers[five];
     value += answers[six];
 
-    console.log('results: ' + value)
+    return value;
 }
 
 
@@ -168,6 +168,7 @@ export default function Evaluations() {
 
         setQuizFinished(true);
         setTotal(calculateResults(Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10));
+        console.log('total: ' + total);
     }
 
     return (
@@ -183,39 +184,55 @@ export default function Evaluations() {
                                 (total > 10) ? (
                                     (total > 20) ? (
                                         <div>
-                                            <h1>Stage 3/4 - Good Progress</h1>
-                                            <h2>Reccommended Exercises- </h2>
+                                            <h1 className = "header-evals">Stage 4/4 - Great Progress!</h1>
+                                            <p>At this stage, patients have made a nearly complete recovery. Body function may be very close or equal to pre-stroke levels,
+                                                and many patients find they can now make a full return to their pre-stroke habits. The exercises recommended here require
+                                                near-normal upper and lower body strength.
+
+                                            </p>
+                                            <p>You can read more about the stroke recovery timeline <a href='https://www.hopkinsmedicine.org/health/conditions-and-diseases/stroke/stroke-recovery-timeline'>here.</a>
+                                            </p>
+                                            <h2>Recommended Exercises- </h2>
                                             <ul>
                                                 <li>
-                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                    <p>Jumping Jacks (<a href='https://www.youtube.com/watch?v=-O7z3ilCu-s'>link</a>)</p>
                                                 </li>
                                                 <li>
-                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                    <p>Sit Ups (<a href='https://www.youtube.com/watch?v=jDwoBqPH0jk'>link</a>)</p>
                                                 </li>
                                                 <li>
-                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                    <p>Incline Push Ups (<a href='https://www.youtube.com/watch?v=jDwoBqPH0jk'>link</a>)</p>
                                                 </li>
                                                 <li>
-                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                    <p>Planks (<a href='https://www.youtube.com/watch?v=pvIjsG5Svck'>link</a>)</p>
                                                 </li>
                                             </ul>
                                         </div>
                                     ) : (
                                         <div>
                                             <h1>Stage 3/4 - Good Progress</h1>
-                                            <h2>Reccommended Exercises- </h2>
+                                            <p>At this stage, improvements continue to accumulate but may begin to taper off. Some patients may be well on
+                                                their way to a full recovery, while others may continue to have setbacks (called chronic stroke disease).
+                                                Each patient is different, and the time it takes to reach this stage may differ vastly between patients.
+                                                Exercises recommended here are somewhat more advanced, and may require enough upper and/or lower body strength
+                                                to support oneself.
+
+                                            </p>
+                                            <p>You can read more about the stroke recovery timeline <a href='https://www.hopkinsmedicine.org/health/conditions-and-diseases/stroke/stroke-recovery-timeline'>here.</a>
+                                            </p>
+                                            <h2>Recommended Exercises- </h2>
                                             <ul>
                                                 <li>
-                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                    <p>Mini Lunge (<a href='https://www.youtube.com/watch?v=R3YEDs3Y7MI'>link</a>)</p>
                                                 </li>
                                                 <li>
-                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                    <p>Knee to Chest (<a href='https://www.youtube.com/watch?v=dGBqTLtdVuA'>link</a>)</p>
                                                 </li>
                                                 <li>
-                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                    <p>Single-Leg Mini Squats with Support	(<a href='https://youtu.be/L7wvxXBvnzc'>link</a>)</p>
                                                 </li>
                                                 <li>
-                                                    <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                    <p>Weight Bearing Lean	(<a href='https://youtu.be/kuuGlz_ddOM'>link</a>)</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -223,28 +240,44 @@ export default function Evaluations() {
                                 ) : (
                                     <div>
                                         <h1>Stage 2/4 - Medium Progress</h1>
-                                        <h2>Reccommended Exercises- </h2>
+                                        <p>Patients in this stage are usually in their fastest period of recovery.
+                                            During this time, most patients will be entered in (and will probabably complete)
+                                            some type of inpatient rehabilitation program. Patients usually experience slow but
+                                            continuous improvements in their physical and cognitive symptoms. Setbacks at this stage are common, so don't worry!
+
+                                        </p>
+                                        <p>You can read more about the stroke recovery timeline <a href='https://www.hopkinsmedicine.org/health/conditions-and-diseases/stroke/stroke-recovery-timeline'>here.</a>
+                                        </p>
+                                        <h2>Recommended Exercises- </h2>
                                         <ul>
                                             <li>
-                                                <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                <p>Shoulder Range of Motion (<a href='https://youtu.be/BVDOcQJ-1v8'>link</a>)</p>
                                             </li>
                                             <li>
-                                                <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                <p>Sitting Trunk Rotations (<a href='https://youtu.be/dekQnnbLyus'>link</a>)</p>
                                             </li>
                                             <li>
-                                                <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                <p>Sit to Stand (<a href='https://youtu.be/FgzjxOnWYvA'>link</a>)</p>
                                             </li>
                                             <li>
-                                                <p>Jumping Jacks (<a href='google.com'>link</a>)</p>
+                                                <p>Knee Extensions (<a href='https://www.youtube.com/watch?v=-rwby0zA6Vs'>link</a>)</p>
                                             </li>
                                         </ul>
                                     </div>
                                 )
                             ) : (
                                 <div>
-                                    <h1>Stage 1/4 - Mild Progress</h1>
-                                    <p>This is the first state of stroke recovery, and may usually come with limited moovement. </p>
-                                    <h2>Reccommended Exercises- </h2>
+                                    <h1>Recovery Stage 1/4 - Mild Progress</h1>
+                                    <p>This is the first state of stroke recovery, usually lasting for a few weeks to a
+                                        few months after a stroke. Patients may have severe cognitive symptoms, such as
+                                        speaking difficulty or memory problems. They may also have severe physical symptoms
+                                        such as paralysis. Therapy sessions at this stage of recovery may take place up to
+                                        six times each day (potentially in the hospital).
+
+                                    </p>
+                                    <p>You can read more about the stroke recovery timeline <a href='https://www.hopkinsmedicine.org/health/conditions-and-diseases/stroke/stroke-recovery-timeline'>here.</a>
+                                    </p>
+                                    <h2>Recommended Exercises- </h2>
                                     <ul>
                                         <li>
                                             <p>Wrist Curl Exercise (<a href='https://www.youtube.com/watch?v=i0JYsLyJEnE'>link</a>)</p>
@@ -262,7 +295,7 @@ export default function Evaluations() {
                                 </div>
                             )
                         ) : (<div>
-                            <h1>Stroke Recovery Questionnare</h1>
+                            <h1>Stroke Recovery Questionnaire</h1>
                             <MultipleChoice
                                 value={Q1}
                                 onChange={handleQ1}
@@ -273,7 +306,7 @@ export default function Evaluations() {
                                 value={Q2}
                                 onChange={handleQ2}
                                 questionName="Which type of stroke did you experience?"
-                                options={[' Ischemic Stroke', 'Hemorrhagic Stroke', 'Transient Ischemic Attack', 'Unsure']}
+                                options={['Ischemic Stroke', 'Hemorrhagic Stroke', 'Transient Ischemic Attack', 'Unsure']}
                             />
                             <MultipleChoice
                                 value={Q3}
@@ -347,7 +380,8 @@ export default function Evaluations() {
 
 /* 
 Google scholar links
-
+Stroke recovery timeline
+https://www.hopkinsmedicine.org/health/conditions-and-diseases/stroke/stroke-recovery-timeline
 
 
 */

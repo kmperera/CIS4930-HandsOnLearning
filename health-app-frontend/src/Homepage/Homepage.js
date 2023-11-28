@@ -56,6 +56,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Homepage.css';
 import Motivation from './Motivation';
+import { Box, Typography } from '@mui/joy';
 
 export default function Homepage() {
   //popup motivation functionality
@@ -125,6 +126,22 @@ export default function Homepage() {
           </Link>
         </div>
       </div>
+      <Box component="footer" className="footer" sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '20px',
+                    backgroundColor: '#262626',
+                    color: '#FFFFFF'
+                }}>
+                    <Typography level="body2" component="p" fontFamily={'Inter'}>
+                        NeuroNurture (2023)
+                    </Typography>
+                    <Typography level="body2" component="p" fontFamily={'Inter'}>
+                        Made by Skylar, Sebastian, Katie, Kelsey, and Maya.
+                    </Typography>
+                </Box>
     </div>
   );
 }

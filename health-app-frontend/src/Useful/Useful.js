@@ -6,6 +6,8 @@ import Input from '@mui/joy/Input';
 import './Useful.css';
 import Motivation from "./Motivation";
 import Navbar from "../Navbar";
+import {Box, Typography} from '@mui/joy';
+
 
 // listed in alphabetical order
 const AllItems = [
@@ -226,6 +228,24 @@ export default function Useful() {
                     ))}
                 </ul>
             </div>
+            <div className = 'pad-end'></div>
+            <Box component="footer" className="footer" sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '20px',
+                backgroundColor: '#262626',
+                color: '#FFFFFF',
+                marginTop: '-16px',
+            }}>
+                <Typography level="body2" component="p" fontFamily={'Inter'}>
+                    NeuroNurture (2023)
+                </Typography>
+                <Typography level="body2" component="p" fontFamily={'Inter'}>
+                    Made by Skylar, Sebastian, Katie, Kelsey, and Maya.
+                </Typography>
+            </Box>
         </>
     );
 }

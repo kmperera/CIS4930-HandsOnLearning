@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Button from '@mui/joy/Button';
 import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';  
-import InputLabel from '@mui/material/InputLabel';  
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
 import Motivation from "./Motivation";
 import Navbar from "../Navbar";
+import {Box, Typography} from '@mui/joy';
 import './Excercises.css';
 
 export default function Exercises() {
@@ -27,14 +28,14 @@ export default function Exercises() {
         const showToast = () => {
             setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
         };
-    
+
         const intervalId = setInterval(showToast, 5000);
 
         return () => {
             clearInterval(intervalId);
         };
-        }, [currentMes, messages]);
-    
+    }, [currentMes, messages]);
+
 
     const currentMessage = messages[currentMes];
 
@@ -118,12 +119,12 @@ export default function Exercises() {
                     {/* Filter dropdowns */}
                     <div>
                         <InputLabel>
-                            <h2 className = "subheader-2-3">Select Category:&#160;&#160;</h2>
+                            <h2 className="subheader-2-3">Select Category:&#160;&#160;</h2>
                         </InputLabel>
                         <Select
                             value={filterCategory}
                             onChange={(e) => setFilterCategory(e.target.value)}
-                            className = "select-menu"
+                            className="select-menu"
                         >
                             <MenuItem value="all">All Categories</MenuItem>
                             {categories.map(category => (
@@ -134,15 +135,15 @@ export default function Exercises() {
 
                     <div>
                         <InputLabel>
-                            <h2 className = "subheader-2-3">Select Equipment:&#160;&#160;</h2>
+                            <h2 className="subheader-2-3">Select Equipment:&#160;&#160;</h2>
                         </InputLabel>
                         <Select
                             value={filterEquipment}
                             onChange={(e) => setFilterEquipment(e.target.value)}
-                            className = "select-menu"
+                            className="select-menu"
 
                         >
-                            <MenuItem value="all" className = "select-menu">All Equipment</MenuItem>
+                            <MenuItem value="all" className="select-menu">All Equipment</MenuItem>
                             {Array.from(new Set(data.map(item => item.equipment))).map(equipment => (
                                 <MenuItem key={equipment} value={equipment}>{equipment}</MenuItem>
                             ))}
@@ -172,6 +173,22 @@ export default function Exercises() {
                     </tbody>
                 </table>
             </div>
+            <Box component="footer" className="footer" sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '20px',
+                backgroundColor: '#262626',
+                color: '#FFFFFF'
+            }}>
+                <Typography level="body2" component="p" fontFamily={'Inter'}>
+                    NeuroNurture (2023)
+                </Typography>
+                <Typography level="body2" component="p" fontFamily={'Inter'}>
+                    Made by Skylar, Sebastian, Katie, Kelsey, and Maya.
+                </Typography>
+            </Box>
         </div>
     );
 }

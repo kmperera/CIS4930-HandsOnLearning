@@ -16,3 +16,10 @@
 .search-bar {
     width: '80vw';
 }
+
+.pad-end {
+    width: 100vw;
+    height: 40px;
+    margin-top: -17px;
+    background-color: #2e3f82;
+}
