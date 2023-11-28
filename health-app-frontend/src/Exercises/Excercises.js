@@ -49,7 +49,7 @@ export default function Exercises() {
         { name: "Resisted Surpine Diagonal Shoulder Flexion", category: "Arm, Shoulder", link: "https://youtu.be/MS2hx7dOAes", equipment: "Resistance band" },
         { name: "Shoulder Horizontal Range of Motion", category: "Shoulder", link: "https://youtu.be/BVDOcQJ-1v8", equipment: "None" },
         { name: "Shoulder Range of Motion", category: "Shoulder", link: "https://youtu.be/BVDOcQJ-1v8", equipment: "None" },
-        { name: "Sitting Trunk Rotations", category: "Torso", link: "https://youtu.be/dekQnnbLyus", equipement: "Chair" },
+        { name: "Sitting Trunk Rotations", category: "Torso", link: "https://youtu.be/dekQnnbLyus", equipment: "Chair" },
         { name: "Sitting Weight Bearing Elbow Flexion and Extension", category: "Arm, Shoulder", link: "https://youtu.be/5rYDXxXO09U", equipment: "None" },
         { name: "Supine Elbow Flexion/Extension", category: "Arm", link: "https://youtu.be/dfBBBIlBmP4", equipment: "Small Towel" },
         { name: "Supine Shoulder Flexion AROM", category: "Shoulder", link: "https://youtu.be/6iEEWUjOkC0", equipment: "None" },
