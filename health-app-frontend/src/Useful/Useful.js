@@ -197,21 +197,24 @@ export default function Useful() {
 
     return (
         <>
-            <div class="pad-2">
-                <Navbar></Navbar>
-                <Motivation message={currentMessage} />
-                <h1 className='useful-header' style={headingStyle}> Useful Rehabilitation Tools</h1>
-                <div>
-                    <Input
-                        label="search"
-                        value={SearchTerm}
-                        onChange={handleChange}
-                    />
-                    <Button onClick={search}>Search</Button>
-                </div>
-                <ul>
-                    {list.map((item) => (
-                        <li key={item.name}>
+            <div className="pad-2">
+        <Navbar></Navbar>
+        <Motivation message={currentMessage} />
+        <h1 style={{ color: "white", marginLeft: '20px' }} className='useful-header'>
+          Useful Rehabilitation Tools
+        </h1>
+        <div>
+          <Input
+            style={{ width: '20vw' }}
+            label="search"
+            value={SearchTerm}
+            onChange={handleChange}
+          />
+          <Button onClick={search}>Search</Button>
+        </div>
+        <ul>
+          {list.map((item) => (
+            <li key={item.name}>
                             <h2>
                                 <a className="white-link" href={item.link} target="_blank" rel="noopener noreferrer">
                                     {item.name}
