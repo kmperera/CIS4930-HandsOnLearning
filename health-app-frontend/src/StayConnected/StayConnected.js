@@ -69,10 +69,14 @@ export default function StayConnected() {
     //         {/* maybe use the current location to get nearby hospitals, ERs, doctors, support groups ...? */}
     //     </div>
     // );
+    const headingStyle = {
+        color: 'white', // Change this to the color you desire
+    };
+
     return (
         <div class="pad">
             <Motivation message={currentMessage} />
-            <h1>Stay Connected!</h1>
+            <h1 style={headingStyle}>Stay Connected!</h1>
             <div class="App">
             <div className="two-sections-container">
       <div className="section">

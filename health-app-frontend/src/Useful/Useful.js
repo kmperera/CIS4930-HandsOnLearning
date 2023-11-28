@@ -190,10 +190,14 @@ export default function Useful() {
         setList(filteredItems);
     };
 
+    const headingStyle = {
+        color: 'white', // Change this to the color you desire
+    };
+
     return (
         <div class="pad">
             <Motivation message={currentMessage} />
-            <h1>Useful Rehabilitation Tools</h1>
+            <h1 style={headingStyle}> Useful Rehabilitation Tools</h1>
             <Input
                 label="search"
                 value={SearchTerm}
@@ -208,8 +212,8 @@ export default function Useful() {
                             {item.name}
                         </a>
                         </h2>
-                        <p>{item.description}</p>
-                        <p>${item.price}</p>
+                        <p style={headingStyle}>{item.description}</p>
+                        <p style={headingStyle}>${item.price}</p>
                     </li>
                 ))}
             </ul>
