@@ -74,7 +74,7 @@ export default function StayConnected() {
         <div className="pad-2">
             <Navbar />
             <Motivation message={currentMessage} />
-            <h1>Stay Connected!</h1>
+            <h1 className = 'header-connected'>Stay Connected!</h1>
             <div class="App">
                 <div className="two-sections-container">
                     <div className="section">

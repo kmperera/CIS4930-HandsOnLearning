@@ -52,14 +52,14 @@ export default function Navbar() {
 
     return (
         <AppBar position="static">
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 2, backgroundColor: 'grey', fontFamily: 'Inter, sans-serif', }}>
-                <Typography level="h5" component="div" sx={{ flexGrow: 1 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 2, backgroundColor: '#A6D2E8', fontFamily: 'Inter, sans-serif', }}>
+                <Typography level="h5" component="div" sx={{ flexGrow: 1, color: '#1E2E6A' }}>
                     NeuroNurture
                 </Typography>
                 {isMobile ? (
                     <>
                         <IconButton color='inherit' onClick={handleMenuOpen}>
-                            <MenuIcon sx={{ color: 'white' }} />
+                            <MenuIcon sx={{  color:'#1E2E6A'}} />
                         </IconButton>
                         <Menu
                             anchorEl={anchorEl}
@@ -98,7 +98,7 @@ export default function Navbar() {
 }
 
 const linkStyle = {
-    color: 'white',
+    color:'#1E2E6A',
     textDecoration: 'none',
     marginRight: '20px', // Spacing between each link
     fontFamily: 'Inter, sans-serif', // Setting the font to Inter
