@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo } from "react";
 import Input from '@mui/joy/Input';
 import './Useful.css';
 import Motivation from "./Motivation";
+import Navbar from "../Navbar";
 
 // listed in alphabetical order
 const AllItems = [
@@ -196,6 +197,7 @@ export default function Useful() {
 
     return (
         <div class="pad">
+            <Navbar></Navbar>
             <Motivation message={currentMessage} />
             <h1 style={headingStyle}> Useful Rehabilitation Tools</h1>
             <Input
