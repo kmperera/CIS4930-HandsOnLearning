@@ -22,17 +22,16 @@ export default function Evaluations() {
       const [currentMes, setMessageIndex] = useState(0);
     
       useEffect(() => {
-          const showToast = () => {
-              setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-              setTimeout(showToast, 5000); 
-          };
-      
-          setTimeout(showToast, 5000); 
-      
-          return () => {
-              clearTimeout(); 
-          };
-      }, [currentMes, messages]);
+        const showToast = () => {
+            setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+        };
+    
+        const intervalId = setInterval(showToast, 5000);
+
+        return () => {
+            clearInterval(intervalId);
+        };
+        }, [currentMes, messages]);
       
       const currentMessage = messages[currentMes];
     

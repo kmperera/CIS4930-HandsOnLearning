@@ -77,13 +77,12 @@ export default function Homepage() {
   useEffect(() => {
     const showToast = () => {
       setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-      setTimeout(showToast, 5000); 
     };
-
-    setTimeout(showToast, 5000); 
-
+  
+    const intervalId = setInterval(showToast, 5000);
+  
     return () => {
-      clearTimeout(); 
+        clearInterval(intervalId);
     };
   }, [currentMessageIndex, messages]);
 
